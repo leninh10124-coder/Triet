@@ -2479,7 +2479,7 @@
     }
 ];
 
-           // ========== BIẾN TOÀN CỤC ==========
+     // ========== BIẾN TOÀN CỤC ==========
         let questions = [...allQuestions];
         let currentQuestionIndex = 0;
         let userAnswers = new Array(allQuestions.length).fill(null);
@@ -2548,9 +2548,12 @@
                 return count;
             }, 0);
             
-            currentQuestionEl.textContent = retryWrongMode ? 
-                `${currentRetryIndex + 1}/${wrongQuestionsIndices.length}` : 
-                `${currentQuestionIndex + 1}/${questions.length}`;
+            // Hiển thị khác nhau tùy chế độ
+            if (retryWrongMode) {
+                currentQuestionEl.textContent = `${currentRetryIndex + 1}/${wrongQuestionsIndices.length}`;
+            } else {
+                currentQuestionEl.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
+            }
             
             answeredCountEl.textContent = `${answeredCount}/${allQuestions.length}`;
             scoreEl.textContent = correctCount;
@@ -2704,11 +2707,11 @@
             userAnswersChecked[originalQuestionIndex] = true;
             
             const isCorrect = answerIndex === allQuestions[originalQuestionIndex].correctAnswer;
-            if (isCorrect) {
-                score++;
-                
-                // Trong chế độ làm lại câu sai, nếu trả lời đúng thì xóa câu đó khỏi danh sách
-                if (retryWrongMode) {
+            
+            // Trong chế độ làm lại câu sai
+            if (retryWrongMode) {
+                if (isCorrect) {
+                    // Nếu trả lời đúng trong chế độ làm lại
                     const displayIndex = displayToOriginalQuestionMap.indexOf(originalQuestionIndex);
                     const wrongIndex = wrongQuestionsIndices.indexOf(displayIndex);
                     
@@ -2728,6 +2731,14 @@
                         }
                     }
                 }
+                
+                // Cập nhật điểm số ngay lập tức
+                score = userAnswers.reduce((count, answer, index) => {
+                    if (answer !== null && answer === allQuestions[index].correctAnswer) {
+                        return count + 1;
+                    }
+                    return count;
+                }, 0);
             }
             
             const displayIndex = displayToOriginalQuestionMap.indexOf(originalQuestionIndex);
@@ -2736,19 +2747,17 @@
             // Tự động chuyển câu
             if (autoNextEnabled) {
                 setTimeout(() => {
-                    if (retryWrongMode) {
+                    if (retryWrongMode && wrongQuestionsIndices.length > 0) {
                         currentRetryIndex++;
                         if (currentRetryIndex < wrongQuestionsIndices.length) {
                             currentQuestionIndex = wrongQuestionsIndices[currentRetryIndex];
                             displayQuestion(currentQuestionIndex);
                         } else {
                             currentRetryIndex = 0;
-                            if (wrongQuestionsIndices.length > 0) {
-                                currentQuestionIndex = wrongQuestionsIndices[0];
-                                displayQuestion(currentQuestionIndex);
-                            }
+                            currentQuestionIndex = wrongQuestionsIndices[0];
+                            displayQuestion(currentQuestionIndex);
                         }
-                    } else if (currentQuestionIndex < questions.length - 1) {
+                    } else if (!retryWrongMode && currentQuestionIndex < questions.length - 1) {
                         currentQuestionIndex++;
                         displayQuestion(currentQuestionIndex);
                     }
@@ -2974,6 +2983,23 @@
                 wrongQuestionsIndices = [...wrongQuestions];
                 currentRetryIndex = 0;
                 
+                // XÓA HOÀN TOÀN ĐÁP ÁN CŨ CỦA CÁC CÂU SAI
+                wrongQuestionsIndices.forEach(displayIndex => {
+                    const originalIndex = displayToOriginalQuestionMap[displayIndex];
+                    // Xóa đáp án đã chọn
+                    userAnswers[originalIndex] = null;
+                    // Đánh dấu là chưa kiểm tra
+                    userAnswersChecked[originalIndex] = false;
+                });
+                
+                // Cập nhật lại điểm số sau khi xóa đáp án cũ
+                score = userAnswers.reduce((count, answer, index) => {
+                    if (answer !== null && answer === allQuestions[index].correctAnswer) {
+                        return count + 1;
+                    }
+                    return count;
+                }, 0);
+                
                 // Đổi giao diện nút
                 retryWrongBtn.innerHTML = '<i class="fas fa-times"></i><span>Thoát chế độ làm lại</span>';
                 retryWrongBtn.classList.add('active');
@@ -2984,7 +3010,11 @@
                 displayQuestion(currentQuestionIndex);
                 
                 // Thông báo
-                alert(`Bạn có ${wrongQuestions.length} câu sai. Chế độ làm lại câu sai đã được bật!`);
+                alert(`🎯 Bật chế độ làm lại câu sai\n\nBạn có ${wrongQuestions.length} câu sai cần ôn tập.\nĐáp án cũ đã được xóa để bạn có thể làm lại từ đầu.`);
+                
+                // Cập nhật lại thống kê
+                updateStats();
+                
             } else {
                 // Tắt chế độ làm lại
                 retryWrongMode = false;
@@ -2999,6 +3029,8 @@
                 // Quay về câu đầu tiên
                 currentQuestionIndex = 0;
                 displayQuestion(currentQuestionIndex);
+                
+                alert('Đã thoát chế độ làm lại câu sai.');
             }
         };
 
@@ -3045,7 +3077,7 @@
             });
         };
 
-        init();
+        init();    
        
     </script>
 </body>
