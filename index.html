@@ -134,6 +134,16 @@
             background: #e0a800;
         }
 
+        .btn-retry {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-retry.active {
+            background: #6c757d;
+            box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.3);
+        }
+
         .btn-nav {
             background: #3498db;
             color: white;
@@ -172,6 +182,18 @@
             align-items: center;
             gap: 10px;
             font-weight: 600;
+        }
+
+        .retry-mode-badge {
+            background: #dc3545;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .question-text {
@@ -519,7 +541,7 @@
         <div class="controls-panel">
             <button id="auto-next-btn" class="btn btn-toggle active">
                 <i class="fas fa-bolt"></i>
-                <span>Tự chuyển câu</span>
+                <span>Tự chuyển câu (BẬT)</span>
             </button>
             <button id="shuffle-questions-btn" class="btn btn-toggle shuffle">
                 <i class="fas fa-random"></i>
@@ -528,6 +550,10 @@
             <button id="shuffle-options-btn" class="btn btn-toggle">
                 <i class="fas fa-list-ol"></i>
                 <span>Đảo đáp án</span>
+            </button>
+            <button id="retry-wrong-btn" class="btn btn-retry">
+                <i class="fas fa-redo-alt"></i>
+                <span>Làm lại câu sai</span>
             </button>
         </div>
 
@@ -1194,7 +1220,7 @@
                 options: [
                     "Cơ sở lý luận của nguyên tắc này là nguyên lý về sự phát triển.",
                     "Theo nguyên tắc này, cần vận dụng quy luật Lượng-chất để hiểu được cách thức phát triển của sự vật.",
-                    "Theo nguyên tắc này cần phân đôi cái thống nhất và nhận thức các bộ phận đối lập của nó để hiểu được nguồn gốc và động lực phát triển của sự vật.",
+                    "Theo nguyên tắc này cần nhân đôi cái thống nhất và nhận thức các bộ phận đối lập của nó để hiểu được nguồn gốc và động lực phát triển của sự vật.",
                     "Theo nguyên tắc này ta chỉ cần thống kê các giai đoạn vận động lịch sử mà sự vật đã trải qua là hiểu được thực chất sự phát triển của sự vật."
                 ],
                 correctAnswer: 2,
@@ -2453,7 +2479,7 @@
     }
 ];
 
-              // ========== BIẾN TOÀN CỤC ==========
+           // ========== BIẾN TOÀN CỤC ==========
         let questions = [...allQuestions];
         let currentQuestionIndex = 0;
         let userAnswers = new Array(allQuestions.length).fill(null);
@@ -2464,12 +2490,15 @@
         let autoNextEnabled = true;
         let shuffleQuestionsEnabled = false;
         let shuffleOptionsEnabled = false;
+        let retryWrongMode = false;
         
-        // Lưu thứ tự xáo trộn cho từng câu hỏi khi bật đảo đáp án
+        // Lưu thứ tự xáo trộn
         let questionShuffleMaps = new Array(allQuestions.length).fill(null);
-        
-        // Ánh xạ giữa số thứ tự hiển thị (1-150) và chỉ số câu hỏi gốc
         let displayToOriginalQuestionMap = Array.from({length: allQuestions.length}, (_, i) => i);
+        
+        // Chế độ làm lại câu sai
+        let wrongQuestionsIndices = [];
+        let currentRetryIndex = 0;
 
         // ========== DOM ELEMENTS ==========
         const quizContent = document.getElementById('quiz-content');
@@ -2487,6 +2516,7 @@
         const autoNextBtn = document.getElementById('auto-next-btn');
         const shuffleQuestionsBtn = document.getElementById('shuffle-questions-btn');
         const shuffleOptionsBtn = document.getElementById('shuffle-options-btn');
+        const retryWrongBtn = document.getElementById('retry-wrong-btn');
         
         const resultContainer = document.getElementById('result-container');
         const finalScoreEl = document.getElementById('final-score');
@@ -2518,14 +2548,32 @@
                 return count;
             }, 0);
             
-            currentQuestionEl.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
-            answeredCountEl.textContent = `${answeredCount}/${questions.length}`;
+            currentQuestionEl.textContent = retryWrongMode ? 
+                `${currentRetryIndex + 1}/${wrongQuestionsIndices.length}` : 
+                `${currentQuestionIndex + 1}/${questions.length}`;
+            
+            answeredCountEl.textContent = `${answeredCount}/${allQuestions.length}`;
             scoreEl.textContent = correctCount;
             
-            const progressPercent = Math.round((answeredCount / questions.length) * 100);
+            const progressPercent = Math.round((answeredCount / allQuestions.length) * 100);
             progressPercentEl.textContent = `${progressPercent}%`;
             progressFillEl.style.width = `${progressPercent}%`;
             progressTextEl.textContent = `${progressPercent}%`;
+        };
+
+        const getWrongQuestions = () => {
+            const wrongIndices = [];
+            
+            userAnswers.forEach((answer, originalIndex) => {
+                if (answer !== null && answer !== allQuestions[originalIndex].correctAnswer) {
+                    const displayIndex = displayToOriginalQuestionMap.indexOf(originalIndex);
+                    if (displayIndex !== -1) {
+                        wrongIndices.push(displayIndex);
+                    }
+                }
+            });
+            
+            return wrongIndices;
         };
 
         // ========== HIỂN THỊ CÂU HỎI ==========
@@ -2533,38 +2581,30 @@
             const originalIndex = displayToOriginalQuestionMap[displayIndex];
             const question = questions[displayIndex];
             
-            // Tạo HTML cho các đáp án
-            let optionsHTML = '';
+            // Tạo bản đồ ánh xạ đáp án
             let optionsToDisplay = [...question.options];
-            let originalOptionIndices = [0, 1, 2, 3];
-            
-            // Tạo bản đồ ánh xạ giữa chỉ số hiển thị và chỉ số gốc của đáp án
             let displayToOriginalOptionMap = {};
             
             if (shuffleOptionsEnabled) {
-                // Nếu chưa có thứ tự xáo trộn cho câu gốc này, tạo mới
                 if (!questionShuffleMaps[originalIndex]) {
-                    const shuffled = shuffleArray([...originalOptionIndices]);
-                    questionShuffleMaps[originalIndex] = shuffled;
+                    questionShuffleMaps[originalIndex] = shuffleArray([0, 1, 2, 3]);
                 }
                 
                 const shuffled = questionShuffleMaps[originalIndex];
                 optionsToDisplay = shuffled.map(i => question.options[i]);
                 
-                // Tạo bản đồ ánh xạ
                 shuffled.forEach((originalIdx, displayIdx) => {
                     displayToOriginalOptionMap[displayIdx] = originalIdx;
                 });
-                originalOptionIndices = shuffled;
             } else {
-                // Không xáo trộn: ánh xạ 1-1
-                originalOptionIndices.forEach((originalIdx, displayIdx) => {
+                [0, 1, 2, 3].forEach((originalIdx, displayIdx) => {
                     displayToOriginalOptionMap[displayIdx] = originalIdx;
                 });
-                // Xóa thứ tự xáo trộn đã lưu
                 questionShuffleMaps[originalIndex] = null;
             }
             
+            // Tạo HTML cho các đáp án
+            let optionsHTML = '';
             optionsToDisplay.forEach((option, displayIndex) => {
                 const originalOptionIndex = displayToOriginalOptionMap[displayIndex];
                 const isSelected = userAnswers[originalIndex] === originalOptionIndex;
@@ -2597,6 +2637,11 @@
                         <div class="question-number">
                             <i class="fas fa-question-circle"></i>
                             Câu hỏi số ${displayIndex + 1}
+                            ${retryWrongMode ? 
+                                `<span class="retry-mode-badge">
+                                    <i class="fas fa-exclamation-circle"></i> Làm lại câu sai (${currentRetryIndex + 1}/${wrongQuestionsIndices.length})
+                                </span>` : 
+                                ''}
                         </div>
                         <div style="color: #6c757d; font-size: 0.9rem;">
                             Chọn một đáp án đúng
@@ -2614,7 +2659,7 @@
                     ${userAnswersChecked[originalIndex] ? `
                         <div class="feedback">
                             <h4><i class="fas fa-lightbulb"></i> Giải thích</h4>
-                            <p>${question.explanation}</p>
+                            <p>${question.explanation || 'Không có giải thích chi tiết.'}</p>
                             <div style="margin-top: 10px; padding: 10px; background: ${userAnswers[originalIndex] === question.correctAnswer ? '#d4edda' : '#f8d7da'}; border-radius: 5px;">
                                 <i class="fas ${userAnswers[originalIndex] === question.correctAnswer ? 'fa-check-circle' : 'fa-times-circle'}"></i>
                                 ${userAnswers[originalIndex] === question.correctAnswer ? 
@@ -2638,11 +2683,15 @@
                 });
             });
             
-            // Cập nhật trạng thái nút
-            prevBtn.disabled = displayIndex === 0;
-            nextBtn.disabled = displayIndex === questions.length - 1;
+            // Cập nhật trạng thái nút điều hướng
+            if (retryWrongMode) {
+                prevBtn.disabled = currentRetryIndex === 0;
+                nextBtn.disabled = currentRetryIndex === wrongQuestionsIndices.length - 1;
+            } else {
+                prevBtn.disabled = displayIndex === 0;
+                nextBtn.disabled = displayIndex === questions.length - 1;
+            }
             
-            // Hiển thị nút kết quả nếu đã trả lời hết
             const answeredCount = userAnswers.filter(a => a !== null).length;
             resultBtn.style.display = answeredCount === allQuestions.length ? 'flex' : 'none';
             
@@ -2657,33 +2706,84 @@
             const isCorrect = answerIndex === allQuestions[originalQuestionIndex].correctAnswer;
             if (isCorrect) {
                 score++;
+                
+                // Trong chế độ làm lại câu sai, nếu trả lời đúng thì xóa câu đó khỏi danh sách
+                if (retryWrongMode) {
+                    const displayIndex = displayToOriginalQuestionMap.indexOf(originalQuestionIndex);
+                    const wrongIndex = wrongQuestionsIndices.indexOf(displayIndex);
+                    
+                    if (wrongIndex !== -1) {
+                        wrongQuestionsIndices.splice(wrongIndex, 1);
+                        
+                        // Nếu đã hết câu sai
+                        if (wrongQuestionsIndices.length === 0) {
+                            alert('🎉 Chúc mừng! Bạn đã làm lại tất cả các câu sai thành công!');
+                            toggleRetryWrongMode();
+                            return;
+                        }
+                        
+                        // Điều chỉnh currentRetryIndex
+                        if (currentRetryIndex >= wrongQuestionsIndices.length) {
+                            currentRetryIndex = 0;
+                        }
+                    }
+                }
             }
             
-            // Tìm chỉ số hiển thị từ chỉ số gốc
             const displayIndex = displayToOriginalQuestionMap.indexOf(originalQuestionIndex);
             displayQuestion(displayIndex);
             
-            // Tự động chuyển câu nếu được bật
-            if (autoNextEnabled && currentQuestionIndex < questions.length - 1) {
+            // Tự động chuyển câu
+            if (autoNextEnabled) {
                 setTimeout(() => {
-                    currentQuestionIndex++;
-                    displayQuestion(currentQuestionIndex);
+                    if (retryWrongMode) {
+                        currentRetryIndex++;
+                        if (currentRetryIndex < wrongQuestionsIndices.length) {
+                            currentQuestionIndex = wrongQuestionsIndices[currentRetryIndex];
+                            displayQuestion(currentQuestionIndex);
+                        } else {
+                            currentRetryIndex = 0;
+                            if (wrongQuestionsIndices.length > 0) {
+                                currentQuestionIndex = wrongQuestionsIndices[0];
+                                displayQuestion(currentQuestionIndex);
+                            }
+                        }
+                    } else if (currentQuestionIndex < questions.length - 1) {
+                        currentQuestionIndex++;
+                        displayQuestion(currentQuestionIndex);
+                    }
                 }, 1500);
             }
         };
 
         // ========== ĐIỀU KHIỂN ==========
         const goToPrevQuestion = () => {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                displayQuestion(currentQuestionIndex);
+            if (retryWrongMode) {
+                if (currentRetryIndex > 0) {
+                    currentRetryIndex--;
+                    currentQuestionIndex = wrongQuestionsIndices[currentRetryIndex];
+                    displayQuestion(currentQuestionIndex);
+                }
+            } else {
+                if (currentQuestionIndex > 0) {
+                    currentQuestionIndex--;
+                    displayQuestion(currentQuestionIndex);
+                }
             }
         };
 
         const goToNextQuestion = () => {
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                displayQuestion(currentQuestionIndex);
+            if (retryWrongMode) {
+                if (currentRetryIndex < wrongQuestionsIndices.length - 1) {
+                    currentRetryIndex++;
+                    currentQuestionIndex = wrongQuestionsIndices[currentRetryIndex];
+                    displayQuestion(currentQuestionIndex);
+                }
+            } else {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    displayQuestion(currentQuestionIndex);
+                }
             }
         };
 
@@ -2735,13 +2835,15 @@
             userAnswersChecked = new Array(allQuestions.length).fill(false);
             score = 0;
             
-            // Reset thứ tự xáo trộn
             questionShuffleMaps = new Array(allQuestions.length).fill(null);
-            
-            // Reset ánh xạ câu hỏi về thứ tự gốc
             displayToOriginalQuestionMap = Array.from({length: allQuestions.length}, (_, i) => i);
             
-            // Reset cài đặt shuffle
+            // Reset chế độ làm lại
+            retryWrongMode = false;
+            wrongQuestionsIndices = [];
+            currentRetryIndex = 0;
+            
+            // Reset cài đặt
             shuffleOptionsEnabled = false;
             shuffleOptionsBtn.classList.remove('active');
             shuffleOptionsBtn.innerHTML = '<i class="fas fa-list-ol"></i><span>Đảo đáp án</span>';
@@ -2753,6 +2855,11 @@
             autoNextEnabled = true;
             autoNextBtn.classList.add('active');
             autoNextBtn.innerHTML = '<i class="fas fa-bolt"></i><span>Tự chuyển câu (BẬT)</span>';
+            
+            // Reset nút làm lại
+            retryWrongBtn.innerHTML = '<i class="fas fa-redo-alt"></i><span>Làm lại câu sai</span>';
+            retryWrongBtn.classList.remove('active');
+            retryWrongBtn.style.background = '#dc3545';
             
             resultContainer.classList.remove('show');
             resultBtn.style.display = 'none';
@@ -2766,7 +2873,6 @@
             let reviewHTML = '<div class="question-container">';
             reviewHTML += '<h2 style="margin-bottom: 30px;"><i class="fas fa-list-ol"></i> Chi Tiết Bài Làm</h2>';
             
-            // Hiển thị theo thứ tự số câu (1-150)
             displayToOriginalQuestionMap.forEach((originalIndex, displayIndex) => {
                 const q = allQuestions[originalIndex];
                 const userAnswer = userAnswers[originalIndex];
@@ -2786,7 +2892,7 @@
                             <strong>Đáp án đúng:</strong> ${String.fromCharCode(65 + q.correctAnswer)}
                         </div>
                         <div style="margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 5px;">
-                            <strong><i class="fas fa-info-circle"></i> Giải thích:</strong> ${q.explanation}
+                            <strong><i class="fas fa-info-circle"></i> Giải thích:</strong> ${q.explanation || 'Không có giải thích chi tiết.'}
                         </div>
                     </div>
                 `;
@@ -2818,16 +2924,12 @@
             shuffleQuestionsBtn.classList.toggle('active', shuffleQuestionsEnabled);
             
             if (shuffleQuestionsEnabled) {
-                // Tạo danh sách các chỉ số gốc (0-149) và xáo trộn
                 const shuffledIndices = shuffleArray([...Array(allQuestions.length).keys()]);
                 displayToOriginalQuestionMap = shuffledIndices;
-                
-                // Cập nhật mảng questions để chứa câu hỏi theo thứ tự mới
                 questions = shuffledIndices.map(i => allQuestions[i]);
                 
                 shuffleQuestionsBtn.innerHTML = '<i class="fas fa-random"></i><span>Đảo câu hỏi (BẬT)</span>';
             } else {
-                // Trở về thứ tự gốc
                 displayToOriginalQuestionMap = Array.from({length: allQuestions.length}, (_, i) => i);
                 questions = [...allQuestions];
                 
@@ -2845,7 +2947,6 @@
                 '<i class="fas fa-list-ol"></i><span>Đảo đáp án (BẬT)</span>' : 
                 '<i class="fas fa-list-ol"></i><span>Đảo đáp án (TẮT)</span>';
             
-            // Khi bật đảo đáp án, tạo thứ tự xáo trộn mới cho tất cả câu hỏi gốc
             if (shuffleOptionsEnabled) {
                 allQuestions.forEach((_, index) => {
                     if (!questionShuffleMaps[index]) {
@@ -2853,17 +2954,59 @@
                     }
                 });
             } else {
-                // Khi tắt đảo đáp án, xóa tất cả thứ tự xáo trộn
                 questionShuffleMaps.fill(null);
             }
             
             displayQuestion(currentQuestionIndex);
         };
 
+        const toggleRetryWrongMode = () => {
+            const wrongQuestions = getWrongQuestions();
+            
+            if (!retryWrongMode) {
+                // Bật chế độ làm lại
+                if (wrongQuestions.length === 0) {
+                    alert('Bạn không có câu nào trả lời sai để làm lại!');
+                    return;
+                }
+                
+                retryWrongMode = true;
+                wrongQuestionsIndices = [...wrongQuestions];
+                currentRetryIndex = 0;
+                
+                // Đổi giao diện nút
+                retryWrongBtn.innerHTML = '<i class="fas fa-times"></i><span>Thoát chế độ làm lại</span>';
+                retryWrongBtn.classList.add('active');
+                retryWrongBtn.style.background = '#6c757d';
+                
+                // Đi đến câu sai đầu tiên
+                currentQuestionIndex = wrongQuestionsIndices[0];
+                displayQuestion(currentQuestionIndex);
+                
+                // Thông báo
+                alert(`Bạn có ${wrongQuestions.length} câu sai. Chế độ làm lại câu sai đã được bật!`);
+            } else {
+                // Tắt chế độ làm lại
+                retryWrongMode = false;
+                wrongQuestionsIndices = [];
+                currentRetryIndex = 0;
+                
+                // Khôi phục giao diện nút
+                retryWrongBtn.innerHTML = '<i class="fas fa-redo-alt"></i><span>Làm lại câu sai</span>';
+                retryWrongBtn.classList.remove('active');
+                retryWrongBtn.style.background = '#dc3545';
+                
+                // Quay về câu đầu tiên
+                currentQuestionIndex = 0;
+                displayQuestion(currentQuestionIndex);
+            }
+        };
+
         // ========== KHỞI TẠO ==========
         const init = () => {
             displayQuestion(currentQuestionIndex);
             
+            // Thêm sự kiện cho các nút
             prevBtn.addEventListener('click', goToPrevQuestion);
             nextBtn.addEventListener('click', goToNextQuestion);
             resultBtn.addEventListener('click', showResults);
@@ -2871,10 +3014,12 @@
             autoNextBtn.addEventListener('click', toggleAutoNext);
             shuffleQuestionsBtn.addEventListener('click', toggleShuffleQuestions);
             shuffleOptionsBtn.addEventListener('click', toggleShuffleOptions);
+            retryWrongBtn.addEventListener('click', toggleRetryWrongMode);
             
             restartBtn.addEventListener('click', restartQuiz);
             reviewBtn.addEventListener('click', reviewAnswers);
             
+            // Thêm phím tắt
             document.addEventListener('keydown', (e) => {
                 switch(e.key) {
                     case 'ArrowLeft':
@@ -2900,9 +3045,7 @@
             });
         };
 
-        init();      
-        
-
+        init();
        
     </script>
 </body>
