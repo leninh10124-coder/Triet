@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trắc Nghiệm Triết Học Mác-Lênin</title>
+    <title>Ngân hàng máy >Ngân>Ng
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -638,1846 +638,785 @@
     </div>
 
     <script>
-        // ========== DỮ LIỆU CÂU HỎI ==========
-        // Đây là dữ liệu mẫu - bạn có thể thay thế bằng dữ liệu thật
-        const allQuestions  = [
-           
-            {
-                id: 1,
-                question: "Tìm đáp án thiếu nội dung nhất về vai trò của thực tiễn đối với nhận thức trong các đáp án dưới đây:",
-                options: [
-                    " Là cơ sở, mục đích, động lực chủ yếu và trực tiếp của nhận thức và là tiêu chuẩn của chân lý.",
-                    "Là nguồn gốc, cơ sở, mục đích của nhận thức.",
-                    "Là mục đích, cơ sở, động lực của nhận thức và làm tiêu chuẩn cho kinh nghiệm.",
-                    "Thước đo để phát hiện sự đúng sai của cảm giác, của kinh nghiệm và của lý luận."
-                ],
-                correctAnswer: 3,
-    
-            },
-            {
-                id: 2,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy tâm trong các luận điểm dưới đây:",
-                options: [
-                    "Chân lý là tri thức phản ánh đúng hiện thực khách quan và đã được thực tiễn kiểm nghiệm, vì vậy, có thể áp dụng chân lý đó vào mọi nơi, mọi lúc, mọi việc đều đúng.",
-                    "Giới động vật và thực vật hoàn toàn tách rời nhau, không có nguồn gốc chung.",
-                    "Sự phát huy tính năng động chủ quan của con người muốn có hiệu quả bao giờ cũng phải dựa vào cơ sở vật chất.",
-                    "Chân lý chỉ tồn tại trong nhận thức con người. Vì vậy nội dung của chân lý là do chủ quan của con người tạo ra."
-                ],
-                correctAnswer: 3,
-                
-            },
-            {
-                id: 3,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy tâm trong các luận điểm dưới đây:",
-                options: [
-                    "Không có lý luận thì hoạt động thực tiễn của con người mò mẫm, mất phương hướng. Do đó lý luận phải có trước và không phụ thuộc vào thực tiễn.",
-                    "Sự phát huy tính năng động chủ quan của con người muốn có hiệu quả bao giờ cũng phải dựa vào cơ sở vật chất.",
-                    "Mọi tri thức dù trực tiếp hay gián tiếp, dù trình độ cao hay thấp, xét đến cùng đều bắt nguồn từ thực tiễn.",
-                    "Động vật và thực vật hoàn toàn khác nhau, không có nguồn gốc chung."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 4,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy vật biện chứng trong các luận điểm dưới đây:",
-                options: [
-                    "Thế giới tồn tại khách quan, còn quy luật vận động và phát triển của thế giới do ý thức con người tạo ra.",
-                    "Phát triển là quá trình tiến bộ, theo đường thẳng.",
-                    "Mỗi chân lý khoa học dù có tính tương đối vẫn chứa đựng yếu tố của chân lý tuyệt đối.",
-                    "Vật chất là thực tại, tồn tại phụ thuộc vào cảm giác của con người."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 5,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy vật siêu hình trong các luận điểm dưới đây:",
-                options: [
-                    "Mâu thuẫn là nguồn gốc, động lực của mọi sự vận động và phát triển.",
-                    "Phủ định của phủ định là sự loại bỏ hoàn toàn sự vật cũ.",
-                    "Nhân quả là mối liên hệ có tính chủ quan, do con người xác lập.",
-                    "Nhận thức chẳng qua chỉ là phức hợp các cảm giác của con người."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 6,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy vật siêu hình trong các luận điểm dưới đây:",
-                options: [
-                    "Nhận thức của con người là một quá trình biện chứng.",
-                    "Cái tất nhiên và ngẫu nhiên không có quan hệ với nhau vì cái tất nhiên sâu sắc, bên trong, ổn định còn cái ngẫu nhiên phong phú, bên ngoài, biến đổi.",
-                    "Nội dung chân lý có tính khách quan còn hình thức chân lý có tính chủ quan.",
-                    "Phủ định của phủ định là quy luật phổ biến trong tự nhiên, trong xã hội và tư duy."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 7,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy vật siêu hình về lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Quan hệ sản xuất có tính vật chất, quyết định mọi quan hệ xã hội khác.",
-                    "Nguyên nhân của mọi biến đổi trong lịch sử, xét đến cùng là do tư tưởng của con người đang luôn luôn thay đổi.",
-                    "Nhân tố kinh tế là nhân tố quyết định duy nhất trong lịch sử.",
-                    "Cơ sở hạ tầng quyết định kiến trúc thượng tầng, đồng thời kiến trúc thượng tầng tác động ngược trở lại đối với cơ sở hạ tầng."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 8,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy tâm về lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Sự thịnh suy của mỗi dân tộc là do ý chí của người đứng đầu quốc gia quyết định.",
-                    "Quan hệ sản xuất là những quan hệ xã hội có tính vật chất được hình thành không tuỳ thuộc ý muốn của những người sản xuất.",
-                    "Nhân tố kinh tế là nhân tố quyết định duy nhất trong lịch sử.",
-                    "Trong một cung điện, người ta suy nghĩ khác trong một túp lều tranh."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 9,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy vật siêu hình về lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Phương thức sản xuất là cách thức con người tiến hành quá trình sản xuất vật chất ở những giai đoạn lịch sử nhất định của xã hội loài người.",
-                    "Xã hội là một tổng số các bộ phận được cấu thành và biến đổi tuỳ ý muốn con người.",
-                    "Xã hội là một tổ hợp các bộ phận được cấu thành và biến đổi một cách ngẫu nhiên.",
-                    "Tất cả cái gì thúc đẩy con người hành động đều phải thông qua đầu óc của họ. Vì vậy phải tìm động lực sâu xa của lịch sử ở trong tư tưởng và ý chí của con người."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 10,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy tâm về lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Dân dĩ thực vi thiên.",
-                    "Do có được những Lực lượng sản xuất mới, loài người thay đổi Phương thức sản xuất của mình, đồng thời thay đổi tất cả những quan hệ xã hội của mình.",
-                    "Trong tất cả những chuyển biến lịch sử thì chuyển biến về kinh tế là chuyển biến quan trọng nhất, quyết định sự phát triển của lịch sử.",
-                    "Xã hội vận động theo những quy luật phụ thuộc vào ý thức con người."
-                ],
-                correctAnswer: 3,
-               
-            },
-            // Câu 11-20
-            {
-                id: 11,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy tâm về lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Về mặt khách quan, nhà nước xuất hiện là do mâu thuẫn giai cấp không thể điều hoà được.",
-                    "Cơ sở trực tiếp hình thành các giai cấp là lòng tham của con người.",
-                    "Giai cấp nào chi phối những tư liệu sản xuất vật chất thì cũng chi phối luôn cả những tư liệu và điều kiện sản xuất tinh thần.",
-                    "Đạo đức và nghệ thuật là các yếu tố phản ánh và phụ thuộc vào các hoạt động kinh tế."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 12,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy tâm trong các luận điểm dưới đây:",
-                options: [
-                    "Chỉ dựa vào các quan hệ kinh tế hiện có cũng có thể giải thích đầy đủ bất kỳ học thuyết chính trị nào.",
-                    "Chỉ dựa vào các quan hệ kinh tế hiện có cũng có thể giải thích đúng bất kỳ tư tưởng pháp quyền nào.",
-                    "Mọi thuyết đạo đức có từ trước đến nay, xét đến cùng, đều là sản phẩm của tình hình kinh tế lúc bấy giờ.",
-                    "Hoạt động của con người khác với động vật là có ý thức, vì thế ý thức của con người quyết định sự tồn tại của họ."
-                ],
-                correctAnswer: 3,
-                
-            },
-            {
-                id: 13,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy vật lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Quan hệ sản xuất là những quan hệ xã hội có tính vật chất quyết định mọi quan hệ xã hội khác.",
-                    "Nguyên nhân của mọi biến đổi trong lịch sử, xét đến cùng là do tư tưởng của con người đang luôn luôn thay đổi.",
-                    "Nhân tố kinh tế là nhân tố quyết định duy nhất trong lịch sử.",
-                    "Sự thịnh suy của mỗi dân tộc là do ý chí của người đứng đầu quốc gia quyết định."
-                ],
-                correctAnswer: 0,
-            },
-               
-            {
-                id: 14,
-                question: "Hãy chỉ ra luận điểm thể hiện lập trường Duy tâm về lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Những quy luật kinh tế có vai trò quyết định sự vận động, phát triển của xã hội, nhưng chính sách kinh tế có thể kìm hãm hoặc thúc đẩy tác động của những quy luật kinh tế đó",
-                    "Xã hội là một tổng số các bộ phận được cấu thành và biến đổi tuỳ theo hoàn cảnh địa lý.",
-                    "Nhân tố kinh tế là nhân tố quyết định duy nhất trong lịch sử.",
-                    "Sự thịnh suy của mỗi dân tộc là do ý chí của người đứng đầu quốc gia quyết định."
-                ],
-                correctAnswer: 3,
-            },
-                
-            {
-                id: 15,
-                question: "Tìm luận điểm tóm tắt sai về khái niệm Tồn tại xã hội trong các luận điểm dưới đây:",
-                options: [
-                    "Đó là một khái niệm cơ bản của chủ nghĩa duy vật lịch sử.",
-                    "Chỉ toàn bộ các yếu tố vật chất bảo đảm cho sự tồn tại và phát triển của xã hội loài người. Bao gồm hoàn cảnh địa lý tự nhiên, dân cư và phương thức sản xuất.",
-                    "Trong ba yếu tố của Tồn tại xã hội thì hoàn cảnh địa lý tự nhiên là yếu tố quan trọng nhất, quyết định sự biến đổi, phát triển của xã hội.",
-                    "Trong ba yếu tố của Tồn tại xã hội thì phương thức sản xuất là yếu tố quan trọng nhất, quyết định sự biến đổi, phát triển của xã hội."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 16,
-                question: "Tìm đáp án tóm tắt sai về khái niệm Quan hệ sản xuất trong các đáp án dưới đây:",
-                options: [
-                    "Mối quan hệ giữa người và người trong quá trình sản xuất của cải vật chất được gọi là Quan hệ sản xuất.",
-                    "Cũng như Lực lượng sản xuất, Quan hệ sản xuất thuộc lĩnh vực đời sống vật chất xã hội.",
-                    "Tính vật chất của Quan hệ sản xuất được biểu hiện ở chỗ chúng tồn tại khách quan, phụ thuộc vào ý thức con người.",
-                    "Quan hệ sản xuất là quan hệ kinh tế cơ bản của một hình thái kinh tế-xã hội."
-                ],
-                correctAnswer: 2,
-            },
-                
-            {
-                id: 17,
-                question: "Tìm đáp án tóm tắt sai về mối quan hệ biện chứng giữa Lực lượng sản xuất và Quan hệ sản xuất trong các đáp án dưới đây:",
-                options: [
-                    "Lực lượng sản xuất và Quan hệ sản xuất là hai mặt của Phương thức sản xuất, tồn tại không tách rời nhau.",
-                    "Mối quan hệ biện chứng giữa Lực lượng sản xuất và Quan hệ sản xuất là nội dung quy luật về sự phù hợp của Quan hệ sản xuất với trình độ và tính chất của Lực lượng sản xuất.",
-                    "Quy luật về sự phù hợp của Quan hệ sản xuất với trình độ và tính chất của Lực lượng sản xuất là quy luật xã hội phổ biến trong tất cả các xã hội có đối kháng giai cấp.",
-                    "Quy luật về sự phù hợp của Quan hệ sản xuất với trình độ và tính chất của Lực lượng sản xuất vạch rõ sự phụ thuộc khách quan của Quan hệ sản xuất vào sự phát triển của Lực lượng sản xuất, đồng thời Quan hệ sản xuất cũng tác động trở lại Lực lượng sản xuất."
-                ],
-                correctAnswer: 2,
-            },
-            {
-                id: 18,
-                question: "Phát hiện luận điểm sai về Lực lượng sản xuất trong các luận điểm sau đây:",
-                options: [
-                    "Đối tượng lao động là yếu tố động nhất và cách mạng nhất trong Lực lượng sản xuất.",
-                    "Tư liệu lao động là cơ sở của sự kế tục lịch sử xã hội.",
-                    "Cái cối xay quay bằng tay đưa lại xã hội có lãnh chúa phong kiến.",
-                    "Năng suất lao động xã hội là thước đo trình độ phát triển của Lực lượng sản xuất."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 19,
-                question: "Phát hiện luận điểm sai về Lực lượng sản xuất trong các luận điểm sau đây:",
-                options: [
-                    "Cái cối xay chạy bằng hơi nước đưa lại xã hội có nhà tư bản công nghiệp.",
-                    "Tư liệu lao động là cơ sở của sự kế tục lịch sử xã hội.",
-                    "Các quan hệ xã hội tồn tại độc lập với Lực lượng sản xuất của xã hội.",
-                    "Trình độ phát triển của Tư liệu lao động là thước đo trình độ chinh phục tự nhiên của loài người."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 20,
-                question: 'Luận điểm: "Từ sự phân công xã hội lớn đầu tiên, đã nảy sinh sự phân chia lớn đầu tiên trong xã hội thành hai giai cấp: chủ nô và nô lệ, kẻ bóc lột và người bị bóc lột" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa duy vật lịch sử.",
-                    "Chủ nghĩa duy tâm lịch sử.",
-                    "Chủ nghĩa duy vật tầm thường.",
-                    "Chủ nghĩa duy tâm chủ quan."
-                ],
-                correctAnswer: 0,
-                
-            },
-            // Câu 21-30
-            {
-                id: 21,
-                question: "Tìm luận điểm trả lời đúng nhất về Phủ định biện chứng trong các luận điểm dưới đây:",
-                options: [
-                    "Là sự phủ định có tính khách quan, tự thân, có tính kế thừa và có thêm yếu tố mới.",
-                    "Là sự phủ định có sự can thiệp của con người, có tính kế thừa và làm chấm dứt quá trình phát triển.",
-                    "Là tự thân phủ định làm cho cái cũ hoàn toàn mất đi và làm cho cái mới khác nhau về chất với cái cũ.",
-                    "Là sự phủ nhận hoàn toàn cái cũ, xác lập cái mới khác cái cũ do có sự can thiệp của con người."
-                ],
-                correctAnswer: 0,
-            },
-            {
-                id: 22,
-                question: "Tìm luận điểm trả lời đúng nhất về phạm trù Cái chung trong các luận điểm dưới đây:",
-                options: [
-                    "Là cái được tập hợp từ tất cả Cái riêng lại, mang tính khách quan, phổ biến trong tự nhiên, xã hội, tư duy",
-                    "Là phạm trù triết học dùng để chỉ những thuộc tính chung lặp lại trong nhiều sự vật, hiện tượng hay quá trình riêng lẻ khác",
-                    "Là cái toàn thể được tập hợp lại từ nhiều bộ phận hợp thành mang tính khách quan, phổ biến.",
-                    "Là những mặt, thuộc tính, quá trình có trong nhiều Cái riêng được con người tạo ra rất phổ biến."
-                ],
-                correctAnswer: 1,
-            },
-            {
-                id: 23,
-                question: "Tìm luận điểm trả lời đúng nhất về phạm trù Cái riêng trong các luận điểm dưới đây:",
-                options: [
-                    "Cái riêng là phạm trù triết học dùng để chỉ một sự vật, một hiện tượng, một quá trình riêng lẻ nhất định.",
-                    "Chỉ một sự vật, hiện tượng, quá trình tồn tại ngẫu nhiên, không lặp lại với Cái riêng khác.",
-                    "Chỉ một cái khác với Cái chung, là cái bộ phận của Cái chung.",
-                    "Chỉ một sự vật, hiện tượng có tính quy định không chỉnh thể, phụ thuộc vào Cái riêng khác."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 24,
-                question: "Tìm luận điểm trả lời đúng về phạm trù Hiện tượng trong các luận điểm dưới đây:",
-                options: [
-                    "Là những mặt, mối liên hệ, yếu tố bên ngoài có tính chủ quan, là hình thức của Bản chất.",
-                    "Hiện tượng là phạm trù triết học phản ánh tất cả mọi biểu hiện ra bên ngoài của bản chất",
-                    "Chỉ phương thức tồn tại, tổ chức kết cấu của Nội dung.",
-                    "Là những mặt, mối liên hệ, yếu tố biểu hiện bên trong của Bản chất."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 25,
-                question: "Tìm luận điểm trả lời đúng nhất về phạm trù Nội dung trong các luận điểm dưới đây:",
-                options: [
-                    "Nội dung là phạm trù triết học phản ánh tổng hợp tất cả những mặt, những yếu tố, những quá trình tạo nên sự vật.",
-                    "Là tổng hợp các mặt, yếu tố, quan hệ, do con người tạo nên sự vật, hiện tượng nào đó.",
-                    "Là tổng số các mặt, yếu tố, quan hệ được sắp xếp tùy ý để tạo nên sự vật, hiện tượng nào đó.",
-                    "Là tổng hợp các mặt có tính quy định tạo nên sự vật."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 26,
-                question: "Tìm luận điểm trả lời đúng nhất về phạm trù Hình thức trong các luận điểm dưới đây:",
-                options: [
-                    "Hình thức là phạm trù triết học dùng để chỉ phương thức tồn tại và phát triển của sự vật, phản ánh kết cấu, hệ thống các mối liên hệ tương đối bền vững giữa các yếu tố của sự vật đó.",
-                    "Là tổng số các mặt biểu hiện bên ngoài của nội dung.",
-                    "Là vẻ bề ngoài của nội dung.",
-                    "Là phương thức kết cấu của nội dung, có tính chủ quan do con người tạo ra cho phù hợp với nội dung."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 27,
-                question: "Tìm quan niệm sai về Thực tiễn trong các quan niệm dưới đây:",
-                options: [
-                    "Thực tiễn là nguồn gốc của nhận thức vì qua thực tiễn bộc lộ các thuộc tính, mối liên hệ bản chất của đối tượng.",
-                    "Thực tiễn là hoạt động sản xuất của con người do đó thực tiễn không cần gắn với lý luận.",
-                    "Thực tiễn là cơ sở, động lực của nhận thức.",
-                    "Thực tiễn là tiêu chuẩn để kiểm tra tính đúng đắn của chân lý."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 28,
-                question: "Tìm luận điểm thể hiện lập trường Duy vật về lịch sử trong các luận điểm dưới đây:",
-                options: [
-                    "Quan hệ sản xuất là những quan hệ xã hội có tính pháp lý, quyết định mọi quan hệ xã hội khác.",
-                    "Trong sự sản xuất ra đời sống của mình, con người có những quan hệ nhất định, tất yếu, không tuỳ thuộc vào ý muốn của họ.",
-                    "Xã hội là một tổ hợp các bộ phận được cấu thành và biến đổi một cách ngẫu nhiên.",
-                    "Sự thịnh suy của mỗi dân tộc là do định mệnh chi phối."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 29,
-                question: "Tìm đáp án thể hiện lập trường Duy tâm về lịch sử trong các đáp án dưới đây:",
-                options: [
-                    "Nhân tố kinh tế là nhân tố quyết định duy nhất trong lịch sử.",
-                    "Vì cơ sở hạ tầng quyết định kiến trúc thượng tầng nên kiến trúc thượng tầng chỉ đóng vai trò thụ động trong sự phát triển lịch sử.",
-                    "Quan hệ sản xuất là những quan hệ xã hội có tính vật chất quyết định mọi quan hệ xã hội khác.",
-                    "Xã hội là một tổ hợp các bộ phận được cấu thành và biến đổi tuỳ theo ý muốn của người đứng đầu."
-                ],
-                correctAnswer: 3,
-            },
-            {
-                id: 30,
-                question: "Tìm đáp án thể hiện lập trường Duy vật tầm thường trong các đáp án dưới đây:",
-                options: [
-                    "Dân dĩ thực vi thiên.",
-                    "Do có được những lực lượng sản xuất mới, loài người thay đổi phương thức sản xuất của mình, đồng thời thay đổi tất cả những quan hệ xã hội của mình.",
-                    "Trong tất cả những chuyển biến lịch sử thì chuyển biến về chính trị là chuyển biến quan trọng nhất, quyết định sự phát triển của lịch sử.",
-                    "Duy chỉ có kinh tế là nhân tố quyết định trong lịch sử."
-                ],
-                correctAnswer: 3,
-            },
-            // Câu 31-40
-            {
-                id: 31,
-                question: "Tìm đáp án sai về các yếu tố cấu thành Quan hệ sản xuất trong các đáp án dưới đây:",
-                options: [
-                    "Quan hệ thuê mướn người lao động.",
-                    "Quan hệ về sở hữu tư liệu sản xuất.",
-                    "Quan hệ về tổ chức quản lý.",
-                    "Quan hệ phân phối sản phẩm lao động."
-                ],
-                correctAnswer: 0,
-               
-            },
-            {
-                id: 32,
-                question: "Tìm yếu tố viết sai về các bộ phận cấu thành Hình thái Kinh tế - xã hội trong các yếu tố dưới đây:",
-                options: [
-                    "Lực lượng sản xuất",
-                    "Cơ sở hạ tầng",
-                    "Điều kiện địa lý -- tự nhiên",
-                    "Kiến trúc thượng tầng"
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 33,
-                question: "Tìm đáp án viết sai về tính độc lập tương đối của Ý thức xã hội trong các đáp án dưới đây:",
-                options: [
-                    "Ý thức xã hội thường lạc hậu hơn so với Tồn tại xã hội.",
-                    "Ý thức xã hội quyết định Tồn tại xã hội.",
-                    "Ý thức xã hội có tính kế thừa trong sự phát triển.",
-                    "Ý thức xã hội tác động trở lại Tồn tại xã hội."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 34,
-                question: "Tìm đáp án viết sai về vai trò Lực lượng sản xuất trong một Hình thái kinh tế - xã hội trong các đáp án dưới đây:",
-                options: [
-                    "Lực lượng sản xuất là nền tảng vật chất- kỹ thuật của xã hội.",
-                    "Lực lượng sản xuất là nhân tố, xét đến cùng, quyết định sự hình thành và phát triển của mọi xã hội.",
-                    "Lực lượng sản xuất thể hiện tính liên tục trong sự phát triển của xã hội loài người.",
-                    "Lực lượng sản xuất đại diện cho bộ mặt của xã hội ở mỗi giai đoạn phát triển."
-                ],
-                correctAnswer: 3,
-                
-            },
-            {
-                id: 35,
-                question: "Tìm đáp án bị viết sai về vai trò Quan hệ sản xuất trong một Hình thái kinh tế - xã hội trong các đáp án dưới đây:",
-                options: [
-                    "Quan hệ sản xuất là quan hệ cơ bản, quyết định tất cả các quan hệ xã hội khác.",
-                    "Quan hệ sản xuất là cơ sở kinh tế của các hiện tượng xã hội.",
-                    "Quan hệ sản xuất thể hiện tính năng động trong sự phát triển của xã hội loài người.",
-                    "Quan hệ sản xuất tiêu biểu cho bộ mặt của xã hội ở mỗi giai đoạn phát triển nhất định."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 36,
-                question: "Xác định quan niệm đúng nhất về xã hội trong các quan niệm dưới đây:",
-                options: [
-                    "Xã hội là một tổng số những bộ phận rời rạc.",
-                    "Xã hội là một tổng hợp có tính máy móc, ngẫu nhiên các yếu tố.",
-                    "Xã hội là một chỉnh thể phức tạp, vận động và phát triển theo các quy luật khách quan.",
-                    "Xã hội là một tổng thể được cấu thành chỉ bởi những con người sinh vật."
-                ],
-                correctAnswer: 2,
-               
-            },
-            {
-                id: 37,
-                question: 'Luận điểm "Những thời đại kinh tế khác nhau không phải ở chỗ chúng sản xuất ra cái gì mà là ở chỗ chúng sản xuất bằng cách nào, với những tư liệu lao động nào" nhấn mạnh yếu tố nào trong các đáp án dưới đây:',
-                options: [
-                    "Công cụ lao động.",
-                    "Người lao động.",
-                    "Đối tượng lao động.",
-                    "Công cụ phụ trợ."
-                ],
-                correctAnswer: 0,
-            },
-            {
-                id: 38,
-                question: "Hãy chỉ ra nguyên nhân đúng và cơ bản nhất dẫn tới sự phân chia xã hội thành giai cấp trong các nguyên nhân dưới đây:",
-                options: [
-                    "Nguyên nhân kinh tế.",
-                    "Nguyên nhân chính trị.",
-                    "Nguyên nhân năng lực bẩm sinh ở từng nhóm người.",
-                    "Nguyên nhân nghề nghiệp khác nhau."
-                ],
-                correctAnswer: 0,
-            },
-            {
-                id: 39,
-                question: "Chọn đáp án đúng nhất về cơ sở triết học của bệnh chủ quan duy ý chí trong các đáp án dưới đây:",
-                options: [
-                    "Chủ nghĩa duy vật tầm thường.",
-                    "Chủ nghĩa duy vật biện chứng.",
-                    "Chủ nghĩa duy tâm chủ quan.",
-                    "Chủ nghĩa duy tâm khách quan."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 40,
-                question: "Hãy chọn đáp án đúng nhất về chân lý trong các đáp án dưới đây:",
-                options: [
-                    "Chân lý là quan điểm được đa số ủng hộ.",
-                    "Chân lý là quan điểm được mọi người trong cuộc họp bỏ phiếu tán thành.",
-                    "Chân lý là một quan điểm được nhiều nhà khoa học thừa nhận.",
-                    "Chân lý là một quan điểm được chứng minh trong thực tiễn là đúng."
-                ],
-                correctAnswer: 3,
-               
-            },
-            // Câu 41-50
-            {
-                id: 41,
-                question: "Chọn đáp án viết sai về biểu hiện của bệnh chủ quan duy ý chí trong các đáp án dưới đây:",
-                options: [
-                    "Suy nghĩ và hành động nóng vội.",
-                    "Chạy theo nguyện vọng chủ quan.",
-                    "Không tính tới điều kiện và khả năng thực tế.",
-                    "Luôn luôn tôn trọng quy luật khách quan."
-                ],
-                correctAnswer: 3,
-              
-            },
-            {
-                id: 42,
-                question: "Hãy chỉ ra một nguyên tắc sai trong việc phòng ngừa và khắc phục bệnh chủ quan duy ý chí trong các nguyên tắc dưới đây:",
-                options: [
-                    "Nhìn thẳng vào sự thật, đánh giá đúng sự thật, nói rõ sự thật.",
-                    "Tôn trọng và hành động theo quy luật khách quan.",
-                    "Lấy dân làm gốc, lắng nghe nguyện vọng chính đáng của dân.",
-                    "Lấy ý chí và nguyện vọng làm điểm khởi đầu cho mọi chủ trương, kế hoạch công tác."
-                ],
-                correctAnswer: 3,
-          
-            },
-            {
-                id: 43,
-                question: "Hãy chỉ ra một đáp án thể hiện nhận thức sai về hoàn cảnh địa lý trong các đáp án dưới đây:",
-                options: [
-                    "Hoàn cảnh địa lý là một trong ba yếu tố cấu thành tồn tại xã hội.",
-                    "Hoàn cảnh địa lý giữ vai trò quan trọng trong sự phát triển xã hội.",
-                    "Hoàn cảnh địa lý là yếu tố thường xuyên, tất yếu của sự tồn tại và phát triển của xã hội.",
-                    "Hoàn cảnh địa lý là nhân tố quyết định sự tồn vong và phát triển của xã hội loài người."
-                ],
-                correctAnswer: 3,
-     
-            },
-            {
-                id: 44,
-                question: "Hãy chỉ ra một đáp án thể hiện nhận thức sai về vấn đề môi trường trong các đáp án dưới đây:",
-                options: [
-                    "Vấn đề môi trường phụ thuộc vào trình độ nhận thức của con người.",
-                    "Vấn đề môi trường phụ thuộc vào năng lực vận dụng các quy luật tự nhiên.",
-                    "Vấn đề môi trường phụ thuộc vào mật độ dân số.",
-                    "Vấn đề môi trường không lệ thuộc vào trình độ sản xuất vật chất."
-                ],
-                correctAnswer: 3,
-         
-            },
-            {
-                id: 45,
-                question: "Hãy chỉ ra một đáp án thể hiện nhận thức sai về vấn đề dân cư trong các đáp án dưới đây:",
-                options: [
-                    "Dân cư là điều kiện tất yếu, thường xuyên của sự phát triển xã hội.",
-                    "Vấn đề dân cư diễn ra theo quy luật tự nhiên, nhưng bị điều chỉnh bởi quy luật xã hội.",
-                    "Dân cư không giữ vai trò quyết định sự phát triển xã hội.",
-                    "Vấn đề dân cư giữ vai trò quyết định sự phát triển của xã hội"
-                ],
-                correctAnswer: 3,
-               
-            },
-            {
-                id: 46,
-                question: "Tìm nhận định sai về giai đoạn nhận thức trực quan sinh động trong các nhận định dưới đây:",
-                options: [
-                    "Giai đoạn nhận thức trực quan sinh động là giai đoạn đầu tiên của quá trình nhận thức.",
-                    "Giai đoạn nhận thức trực quan sinh động là giai đoạn phản ánh trực tiếp khách thể bằng các phán đoán.",
-                    "Giai đoạn nhận thức trực quan sinh động là giai đoạn nhận thức đối tượng bằng các hình thức: cảm giác, tri giác, biểu tượng.",
-                    "Giai đoạn nhận thức trực quan sinh động là giai đoạn chưa nhận thức được bản chất, quy luật của sự vật."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 47,
-                question: "Tìm định nghĩa sai về giai đoạn tư duy trừu tượng (nhận thức lý tính) trong các định nghĩa dưới đây:",
-                options: [
-                    "Là giai đoạn nhận thức tiếp theo giai đoạn trực quan sinh động.",
-                    "Là giai đoạn nhận thức cao hơn dựa trên cơ sở những tài liệu do trực quan sinh động đem lại.",
-                    "Là giai đoạn phản ánh gián tiếp hiện thực nên có nguy cơ phản ánh sai lệch hiện thực",
-                    "Là giai đoạn nhận thức bằng cảm giác, tri giác và biểu tượng"
-                ],
-                correctAnswer: 3,
-             },
-            {
-                id: 48,
-                question: "Tìm đáp án giải thích chưa đúng về Nguyên tắc Toàn diện trong các đáp án dưới đây:",
-                options: [
-                    "Cơ sở lý luận của nguyên tắc này là Nguyên lý về mối liên hệ phổ biến.",
-                    "Nguyên tắc này đòi hỏi khi nhận thức sự vật phải xem xét tất cả các mặt, các mối liên hệ của nó.",
-                    "Phải xem xét sự vật trong tính toàn vẹn và phức tạp của nó.",
-                    "Căn cứ của nguyên tắc này là tư duy của con người ở mỗi thời điểm đều có thể bao quát được hết mọi mặt phong phú của sự vật."
-                ],
-                correctAnswer: 3,
-                
-            },
-            {
-                id: 49,
-                question: "Tìm đáp án giải thích sai về Nguyên tắc Phát triển trong các đáp án dưới đây:",
-                options: [
-                    "Cơ sở lý luận của nguyên tắc này là nguyên lý về sự phát triển.",
-                    "Theo nguyên tắc này, cần vận dụng quy luật Lượng-chất để hiểu được cách thức phát triển của sự vật.",
-                    "Theo nguyên tắc này cần nhân đôi cái thống nhất và nhận thức các bộ phận đối lập của nó để hiểu được nguồn gốc và động lực phát triển của sự vật.",
-                    "Theo nguyên tắc này ta chỉ cần thống kê các giai đoạn vận động lịch sử mà sự vật đã trải qua là hiểu được thực chất sự phát triển của sự vật."
-                ],
-                correctAnswer: 2,
-          
-            },
-            {
-                id: 50,
-                question: "Tìm đáp án trả lời sai về phạm trù Kiến trúc thượng tầng trong các đáp án dưới đây:",
-                options: [
-                    "Sự hình thành và phát triển của Kiến trúc thượng tầng là do cơ sở hạ tầng quyết định.",
-                    "Đồng thời Kiến trúc thượng tầng còn có quan hệ kế thừa đối với một số yếu tố của kiến trúc thượng tầng của xã hội cũ.",
-                    "Bất cứ sự biến đổi nào trong Kiến trúc thượng tầng cũng chỉ do nguyên nhân kinh tế.",
-                    "Bản thân những yếu tố trong Kiến trúc thượng tầng cũng tác động lẫn nhau, gây ra những biến đổi nhất định của những yếu tố đó."
-                ],
-                correctAnswer: 2,
-            
-            },
-            // Câu 51-60
-            {
-                id: 51,
-                question: "Tìm đáp án trả lời sai về phạm trù Kiến trúc thượng tầng trong các đáp án dưới đây:",
-                options: [
-                    "Các yếu tố của Kiến trúc thượng tầng không tồn tại tách rời nhau, mà tác động qua lại lẫn nhau.",
-                    "Những tác động qua lại trong nội bộ Kiến trúc thượng tầng dẫn tới những kết quả nhiều khi không thể giải thích được chỉ bằng những nguyên nhân kinh tế.",
-                    "Các yếu tố của Kiến trúc thượng tầng đều nảy sinh trên Cơ sở hạ tầng, phản ánh Cơ sở hạ tầng.",
-                    "Các yếu tố thuộc Kiến trúc thượng tầng đều có mối quan hệ như nhau đối với Cơ sở hạ tầng."
-                ],
-                correctAnswer: 3,
+        [
+    {
+        "id": 1,
+        "question": "Mục đích của mô hình lập trình 3 lớp (three layers) là để?",
+        "options": [
+            "Dễ quản lý các thành phần của hệ thống.",
+            "Không bị ảnh hưởng bởi các thay đổi.",
+            "Công việc không bị chồng chéo và ảnh hưởng lẫn nhau",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 2,
+        "question": "Lựa chọn nào ở dưới đây chỉ ra các thành phần trong mô hình 3 lớp - three layers?",
+        "options": [
+            "Presentation Layers, Business Logic Layer, Data Access Layer.",
+            "Model, View, Controller.",
+            "Client -- Server.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 3,
+        "question": "Lựa chọn nào ở dưới đây chỉ ra các thành phần trong mô hình MVC?",
+        "options": [
+            "Model, View, Controller.",
+            "Presentation Layers, Business Logic Layer, Data Access Layer.",
+            "Client -- Server.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 4,
+        "question": "Lựa chọn đáp án đúng trong các đáp án dưới đây cho chức năng của lớp Presentation Layers.",
+        "options": [
+            "Lớp này làm nhiệm vụ giao tiếp với người dùng cuối để thu thập dữ liệu và hiển thị kết quả/dữ liệu thông qua các thành phần trong giao diện người sử dụng.",
+            "Lớp này làm nhiệm vụ xử lý chính các dữ liệu trước khi được đưa lên hiển thị trên màn hình hoặc xử lý các dữ liệu trước khi chuyển xuống Data Access Layer để lưu dữ liệu xuống cơ sở dữ liệu. Đây là nơi để kiểm tra ràng buộc, các yêu cầu nghiệp vụ, tính toán, xử lý các yêu cầu và lựa chọn kết quả trả về cho Presentation Layers.",
+            "Lớp này thực hiện các nghiệp vụ liên quan đến lưu trữ và truy xuất dữ liệu của ứng dụng như đọc, lưu, cập nhật cơ sở dữ liệu.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 5,
+        "question": "Lựa chọn đáp án đúng trong các đáp án dưới đây cho chức năng của lớp Business Logic Layer.",
+        "options": [
+            "Lớp này làm nhiệm vụ giao tiếp với người dùng cuối để thu thập dữ liệu và hiển thị kết quả/dữ liệu thông qua các thành phần trong giao diện người sử dụng.",
+            "Lớp này làm nhiệm vụ xử lý chính các dữ liệu trước khi được đưa lên hiển thị trên màn hình hoặc xử lý các dữ liệu trước khi chuyển xuống Data Access Layer để lưu dữ liệu xuống cơ sở dữ liệu. Đây là nơi để kiểm tra ràng buộc, các yêu cầu nghiệp vụ, tính toán, xử lý các yêu cầu và lựa chọn kết quả trả về cho Presentation Layers.",
+            "Lớp này thực hiện các nghiệp vụ liên quan đến lưu trữ và truy xuất dữ liệu của ứng dụng như đọc, lưu, cập nhật cơ sở dữ liệu.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 6,
+        "question": "Lựa chọn đáp án đúng trong các đáp án dưới đây cho chức năng của lớp Data Access Layer.",
+        "options": [
+            "Lớp này làm nhiệm vụ giao tiếp với người dùng cuối để thu thập dữ liệu và hiển thị kết quả/dữ liệu thông qua các thành phần trong giao diện người sử dụng.",
+            "Lớp này làm nhiệm vụ xử lý chính các dữ liệu trước khi được đưa lên hiển thị trên màn hình hoặc xử lý các dữ liệu trước khi chuyển xuống Data Access Layer để lưu dữ liệu xuống cơ sở dữ liệu. Đây là nơi để kiểm tra ràng buộc, các yêu cầu nghiệp vụ, tính toán, xử lý các yêu cầu và lựa chọn kết quả trả về cho Presentation Layers.",
+            "Lớp này thực hiện các nghiệp vụ liên quan đến lưu trữ và truy xuất dữ liệu của ứng dụng như đọc, lưu, cập nhật cơ sở dữ liệu.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 7,
+        "question": "Điểm khác biệt giữa mô hình 3 lớp (three layer) và mô hình MVC?",
+        "options": [
+            "Mô hình MVC thành phần Model giữ chức năng của cả lớp Business và Data Access trong mô hình 3 lớp.",
+            "Mô hình MVC thành phần Model giữ chức năng của cả lớp Business và Presentation Layers trong mô hình 3 lớp.",
+            "Mô hình MVC thành phần Model giữ chức năng của cả lớp Data Access và Presentation Layers trong mô hình 3 lớp.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 8,
+        "question": "Trong thiết kế hệ thống các tổ chức tín dụng, nguyên tắc thiết kế mã khách hàng là?",
+        "options": [
+            "Duy nhất trên toàn hệ thống.",
+            "Mỗi chi nhánh một mã.",
+            "Mỗi vùng một mã.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 9,
+        "question": "Cho 2 bảng thông tin khách hàng và định danh khách hàng với các khóa chính như sau: TBCM_GENERAL (BRCD, CUSTSEQ), TBCM_CUSTID (BRCD, CUSTSEQ, IDTPCD), xác định kiểu quan hệ giữa 2 bảng này:",
+        "options": [
+            "Một -- một.",
+            "Một -- nhiều.",
+            "Không có quan hệ.",
+            "Cả 3 đáp án trên đều sai."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 10,
+        "question": "Quy trình từ khi tiếp nhận yêu cầu đề nghị vay vốn của khách hàng cho đến khi ngân hàng đồng ý phê duyệt khoản vay trải qua các bước nào dưới đây?",
+        "options": [
+            "Đơn xin vay => Chấm điểm khách hàng => Phê duyệt => Thẩm định.",
+            "Chấm điểm khách hàng => Đơn xin vay => Thẩm định => Phê duyệt.",
+            "Chấm điểm khách hàng => Thẩm định => Đơn xin vay => Phê duyệt.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 11,
+        "question": "Quy trình đăng ký tài sản bảo đảm / giao dịch bảo đảm trải qua các bước nào dưới đây?",
+        "options": [
+            "Đăng ký TSBĐ => Định giá => Thế chấp.",
+            "Định giá => Đăng ký TSBĐ => Thế chấp.",
+            "Thế chấp => Định giá => Đăng ký TSBĐ.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 12,
+        "question": "Quy trình giải chấp tài sản trải qua các bước nào dưới đây?",
+        "options": [
+            "Giải chấp TSBĐ => Giải chấp thế chấp.",
+            "Giải chấp thế chấp => Giải chấp TSBĐ.",
+            "Giải chấp TSBĐ.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 13,
+        "question": "Quy trình từ khi ngân hàng phê duyệt khoản vay của khách hàng cho đến khi khách hàng trả nợ trải qua các bước nào dưới đây?",
+        "options": [
+            "Giải ngân => Phê duyệt => Trả nợ.",
+            "Trả nợ => Giải ngân => Phê duyệt.",
+            "Phê duyệt => Giải ngân => Trả nợ.",
+            "Cả 3 đáp án trên."
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 14,
+        "question": "Tiền lãi tiền gửi không kỳ hạn được tính theo công thức",
+        "options": [
+            "Bình quân tháng",
+            "Số tiền gốc * lãi suất * kỳ hạn",
+            "Số tiền gốc * lãi suất / kỳ hạn",
+            "Số tiền gốc / lãi suất * kỳ hạn"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 15,
+        "question": "Tiền lãi tiền gửi có kỳ hạn được tính theo công thức",
+        "options": [
+            "Bình quân tháng",
+            "Số tiền gốc * lãi suất * kỳ hạn",
+            "Số tiền gốc * lãi suất / kỳ hạn",
+            "Số tiền gốc / lãi suất * kỳ hạn"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 16,
+        "question": "Các chức năng cần xây dựng cho tiền gửi có kỳ hạn",
+        "options": [
+            "Mở, đóng, gia hạn, hủy giao dịch",
+            "Mở, đóng, chi lãi cuối tháng",
+            "Gửi tiền, rút tiền, hủy giao dịch",
+            "Gồm cả đáp án 2 và đáp án 3"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 17,
+        "question": "Các chức năng cần xây dựng cho tiền gửi không kỳ hạn",
+        "options": [
+            "Mở, đóng, gia hạn, hủy giao dịch",
+            "Mở, đóng, chi lãi cuối tháng",
+            "Gửi tiền, rút tiền, hủy giao dịch",
+            "Gồm cả đáp án 2 và đáp án 3"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 18,
+        "question": "Chức năng gửi tiền được sử dụng cho",
+        "options": [
+            "Tiền gửi không kỳ hạn",
+            "Tiền gửi tiết kiệm gửi góp",
+            "Tiền gửi tiết kiệm thông thường",
+            "Gồm cả đáp án 1 và đáp án 2"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 19,
+        "question": "Chức năng rút tiền được sử dụng cho",
+        "options": [
+            "Tiền gửi không kỳ hạn",
+            "Tiền gửi tiết kiệm có kỳ hạn thông thường",
+            "Tiền gửi góp",
+            "Gồm đáp án 1 và đáp án 2"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 20,
+        "question": "Chức năng chi lãi định kỳ được xây dựng cho",
+        "options": [
+            "Tiền gửi có kỳ hạn",
+            "Tiền gửi không kỳ hạn",
+            "Tiền gửi góp có định kỳ",
+            "Các phương án trên đều sai"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 21,
+        "question": "Giá trị của lãi suất phụ thuộc vào hợp đồng kỳ hạn hoặc mức tiền gửi ta sử dụng",
+        "options": [
+            "Lãi suất cố định",
+            "Lãi suất cơ bản",
+            "Lãi suất theo các mức",
+            "Các đáp án trên đều sai"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 22,
+        "question": "Ngày 30/1/2016, khách hàng mở tài khoản tiết kiệm lĩnh lãi sau kỳ hạn thông thường với số tiền 10.000.000 vnđ. Nếu khách hàng mở kỳ hạn 1 tháng thì ngày đến hạn của sổ tiết kiệm sẽ là",
+        "options": [
+            "29/2/2016",
+            "1/3/2016",
+            "2/3/2016",
+            "28/2/2016"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 23,
+        "question": "Ngày 30/1/2016, khách hàng mở tài khoản tiết kiệm lĩnh lãi sau kỳ hạn thông thường với số tiền 10.000.000 vnđ. Nếu khách hàng mở kỳ hạn 30 ngày thì ngày đến hạn của sổ tiết kiệm sẽ là",
+        "options": [
+            "29/2/2016",
+            "1/3/2016",
+            "2/3/2016",
+            "28/2/2016"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 24,
+        "question": "Thẻ ATM phát hành dựa trên tài khoản",
+        "options": [
+            "Tài khoản có kỳ hạn",
+            "Tài khoản không kỳ hạn",
+            "Tài khoản gửi góp",
+            "Cả đáp án 1 và đáp án 2 đều đúng"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 25,
+        "question": "Thẻ Visa debit phát hành dựa trên tài khoản",
+        "options": [
+            "Tài khoản thanh toán",
+            "Tài khoản có kỳ hạn",
+            "Tài khoản gửi góp",
+            "Cả đáp án 1 và đáp án 2 đều đúng"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 26,
+        "question": "Lãi suất của tiền gửi thanh toán thường",
+        "options": [
+            "Cao hơn lãi suất tiền gửi tiết kiệm",
+            "Thấp hơn lãi suất tiền gửi tiết kiệm",
+            "Rất thấp không đáng kể",
+            "Cả đáp án 2 và đáp án 3 đều đúng"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 27,
+        "question": "Mục đích của tiền gửi tiết kiệm là",
+        "options": [
+            "Thanh toán",
+            "Hưởng tiền lãi cho thời gian gửi",
+            "Đảm bảo an toàn cho số tiền",
+            "Gồm cả đáp án 2 và đáp án 3"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 28,
+        "question": "Khi xây dựng màn hình rút tiền, khách hàng không được rút tiền tài khoản trong trường hợp nào",
+        "options": [
+            "Tài khoản phong tỏa toàn bộ số dư",
+            "Số dư trên tài khoản thấp hơn số dư tối thiểu",
+            "Khách hàng bị phong tỏa hoạt động",
+            "Cả ba đáp án 1, 2 và 3 đều đúng"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 29,
+        "question": "Khi xây dựng màn hình gửi tiền, khách hàng không gửi được tiền vào tài khoản trong trường hợp nào",
+        "options": [
+            "Tài khoản phong tỏa số dư",
+            "Số dư trên tài khoản thấp hơn số dư tối thiểu",
+            "Khách hàng bị phong tỏa hoạt động",
+            "Cả ba đáp án 1, 2 và 3 đều đúng"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 30,
+        "question": "Phương thức nào đồng bộ dữ liệu theo thời gian thực",
+        "options": [
+            "Deferred, Import/Export",
+            "DBLINK, Deferred",
+            "Golden Gate, DBLINK",
+            "Golden Gate, Deferred"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 31,
+        "question": "Phương thức nào đồng bộ dữ liệu giữa các hệ thống DB khác nhau theo thời gian thực",
+        "options": [
+            "Deferred",
+            "DBLINK",
+            "Import/Export",
+            "Golden Gate"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 32,
+        "question": "Khi cần đẩy dữ liệu full bảng trong thời gian ngắn dùng phương thức nào",
+        "options": [
+            "Deferred",
+            "DBLINK",
+            "Import/Export",
+            "Golden Gate"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 33,
+        "question": "Phương thức nào lấy dữ liệu thay đổi dựa trên sự thay đổi của ứng dụng client:",
+        "options": [
+            "Deferred",
+            "DBLINK",
+            "Import/Export",
+            "Golden Gate"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 34,
+        "question": "Đặc điểm nào sau đây không đúng với phương thức Golden Gate",
+        "options": [
+            "Đồng bộ dữ liệu thời gian thực",
+            "Lấy dữ liệu thay đổi dựa trên sự thay đổi của client",
+            "Áp dụng cho các bảng tạo báo cáo Online",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 35,
+        "question": "Đặc điểm nào sau đây không đúng với phương thức DBLINK",
+        "options": [
+            "Đồng bộ dữ liệu thời gian thực",
+            "Áp dụng đối với những bảng dữ liệu nhỏ",
+            "Không dùng trong trường hợp đẩy full bảng dữ liệu",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 36,
+        "question": "Phương thức đẩy số liệu nào được sử dụng khi chạy xử lý cuối ngày",
+        "options": [
+            "Golden Gate, DBLINK",
+            "DBLINK, Import/Export",
+            "Import/Export, Deferred",
+            "Golden Gate, Deferred"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 37,
+        "question": "Mô tả nào sau đây dùng cho Staging",
+        "options": [
+            "Nơi chứa các nguồn dữ liệu đầu vào hệ thống",
+            "Nơi chứa tạm thời các dữ liệu chưa qua xử lý",
+            "Nơi chứa các dữ liệu đã được làm sạch, chuẩn hoá",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 38,
+        "question": "Mô tả nào sau đây đúng với Data Mart",
+        "options": [
+            "Nơi chứa các nguồn dữ liệu đầu vào hệ thống",
+            "Nơi chứa tạm thời các dữ liệu chưa qua xử lý",
+            "Nơi chứa các dữ liệu đã được làm sạch, chuẩn hoá",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 39,
+        "question": "Dữ liệu dạng thô được hiểu là dạng dữ liệu",
+        "options": [
+            "Dữ liệu gốc chưa qua xử lý",
+            "Trùng lặp dữ liệu",
+            "Thông tin nằm ở nhiều bảng khác nhau",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 40,
+        "question": "Dữ liệu dạng thô thường được dùng cho loại báo cáo nào",
+        "options": [
+            "Báo cáo sao kê chi tiết khách hàng",
+            "Báo cáo phân tích, tổng hợp",
+            "Báo cáo điều hành",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 41,
+        "question": "Chuẩn hoá dữ liệu là quá trình",
+        "options": [
+            "Loại bỏ dữ liệu trùng lặp",
+            "Làm sạch, chuẩn hoá hay chuyển đổi định dạng dữ liệu",
+            "Đảm bảo tính đúng đắn và duy nhất của dữ liệu",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 42,
+        "question": "Dữ liệu chuyên đề là dạng dữ liệu (Data Mart)",
+        "options": [
+            "Được thiết kế chuyên dụng cho một ứng dụng phân tích cụ thể",
+            "Cho phép tạo ra các mô hình dữ liệu",
+            "Được sử dụng trong các báo cáo phân tích",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 43,
+        "question": "Đặc điểm nào không đúng với mô hình dữ liệu chuyên đề (Data Mart)",
+        "options": [
+            "Dữ liệu linh hoạt",
+            "Có khả năng mở rộng",
+            "Không sửa đổi được các tiêu chí định sẵn",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 44,
+        "question": "Dữ liệu chuyên đề (Data Mart) không được dùng cho dạng báo cáo nào",
+        "options": [
+            "Báo cáo sao kê chi tiết khách hàng",
+            "Báo cáo phân tích, tổng hợp",
+            "Báo cáo điều hành",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 45,
+        "question": "Trình tự tổng hợp dữ liệu chuyên đề Data Mart",
+        "options": [
+            "Tập hợp các bảng dữ liệu thô -> Chuẩn hóa dữ liệu -> Tạo dữ liệu chuyên đề",
+            "Chuẩn hóa dữ liệu -> Tập hợp các bảng dữ liệu thô -> Tạo dữ liệu chuyên đề",
+            "Tạo dữ liệu chuyên đề -> Chuẩn hóa dữ liệu -> Tập hợp các bảng dữ liệu thô",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 46,
+        "question": "Phân cấp dữ liệu tổng hợp theo trình tự nào",
+        "options": [
+            "Toàn hệ thống -> CN cấp 1 -> CN cấp 2",
+            "CN cấp 1 -> Toàn hệ thống -> CN cấp 2",
+            "CN cấp 2 -> CN cấp 1 -> Toàn hệ thống",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 47,
+        "question": "Việc phân cấp dữ liệu có tác dụng gì",
+        "options": [
+            "Quản lý dữ liệu chuyên biệt",
+            "Đơn giản hóa quy trình quản lý dữ liệu",
+            "Truy vấn dữ liệu theo mục đích, tiêu chí một cách nhanh chóng",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 48,
+        "question": "Hàm lấy dữ liệu tự động có những đặc điểm nào",
+        "options": [
+            "Công thức sử dụng linh hoạt",
+            "Tùy biến điều kiện đầu vào",
+            "Đơn giản hóa cho người sử dụng",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 49,
+        "question": "Vai trò của hệ thống MIS trong ngân hàng",
+        "options": [
+            "Quản lý khai thác thông tin",
+            "Trợ giúp đưa ra các quyết định cho tầm nhìn và chiến lược của lãnh đạo",
+            "Cung cấp dữ liệu đã được phân tích nhanh chóng và chính xác",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 50,
+        "question": "Báo cáo dạng tĩnh trong MIS có những đặc điểm nào",
+        "options": [
+            "Các công thức, tiêu chí cố định",
+            "Thay đổi tiêu chí phức tạp, mất nhiều thời gian",
+            "Người sử dụng không tự xây dựng được báo cáo",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 51,
+        "question": "Báo cáo dạng động trong MIS có những đặc điểm nào",
+        "options": [
+            "Các công thức, tiêu chí linh hoạt",
+            "Người sử dụng có thể tự tạo các báo cáo của riêng mình",
+            "Thay đổi các tiêu chí của báo cáo đơn giản, nhanh chóng",
+            "Tất cả các đáp án"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 52,
+        "question": "Ngân hàng muốn chuyển tiền qua hệ thống CITAD của ngân hàng nhà nước yêu cầu phải có các thông tin gì",
+        "options": [
+            "Phải được NHNN cấp mã ngân hàng.",
+            "Phải được NHNN mở tài khoản bù trừ liên ngân hàng.",
+            "Cả hai thông tin a, b.",
+            "Không cần thông tin gì cả."
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 53,
+        "question": "Hai Ngân hàng muốn chuyển tiền song phương với nhau yêu cầu phải có các thông tin gì",
+        "options": [
+            "Phải được NHNN mở tài khoản bù trừ liên ngân hàng.",
+            "Mỗi Ngân hàng phải mở tài khoản bù trừ tại ngân hàng đối tác.",
+            "Cả hai thông tin a, b.",
+            "Không cần thông tin gì cả."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 54,
+        "question": "Chức năng, nhiệm vụ của giao dịch viên khi thực hiện giao dịch chuyển tiền đi",
+        "options": [
+            "Nhận chứng từ gốc chuyển tiền từ khách hàng và Kiểm tra tính hợp lệ, hợp pháp của chứng từ gốc. Nhập dữ liệu chứng từ gốc (lập lệnh thanh toán) vào hệ thống",
+            "Phê duyệt lệnh thanh toán chuyển đi",
+            "Đáp án 1 hoặc 2",
+            "Cả đáp án 1 và 2."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 55,
+        "question": "Để hủy được một lệnh chuyển tiền đi yêu cầu",
+        "options": [
+            "Lệnh chưa được phê duyệt",
+            "Lệnh đã duyệt nhưng chuyển đi không thành công.",
+            "Đáp án 1 hoặc 2",
+            "Không thể hủy lệnh chuyển tiền"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 56,
+        "question": "Một lệnh chuyển tiền đã đi thành công. Khách hàng phát hiện ra sai địa chỉ người nhận, khách hàng đến ngân hàng yêu cầu sửa đổi thông tin. Giao dịch viên sẽ làm thế nào",
+        "options": [
+            "Tìm lệnh chuyển tiền lên và sửa đổi thông tin địa chỉ người nhận.",
+            "Lập tra soát yêu cầu ngân hàng trả tiền cho khách hàng với địa chỉ mới.",
+            "Thực hiện hủy lệnh chuyển tiền",
+            "Trả lời khách hàng là không làm được."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 57,
+        "question": "Chức năng của Giao dịch viên đối với lệnh chuyển tiền đi",
+        "options": [
+            "Lập lệnh/Sửa đổi lệnh/Hủy lệnh chuyển tiền đi",
+            "Duyệt lệnh chuyển tiền",
+            "Đáp án 1 hoặc 2.",
+            "Cả đáp án 1 và 2."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 58,
+        "question": "Chức năng của Kiểm soát viên đối với lệnh chuyển tiền đi",
+        "options": [
+            "Lập lệnh/Sửa đổi lệnh/Hủy lệnh chuyển tiền đi",
+            "Duyệt lệnh chuyển tiền",
+            "Đáp án 1 hoặc 2.",
+            "Cả đáp án 1 và 2."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 59,
+        "question": "Giao dịch viên lập một lệnh chuyển tiền đi hoàn thành (kiểm soát chưa phê duyệt đi), phát hiện bị sai thông tin người nhận, giao dịch viên nên xử lý thế nào?",
+        "options": [
+            "Tìm lệnh chuyển tiền lên và sửa đổi thông tin người nhận đúng.",
+            "Lập tra soát yêu cầu ngân hàng trả tiền cho khách hàng với thông tin mới.",
+            "Hủy giao dịch bị sai thông tin",
+            "Không xử lý được."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 60,
+        "question": "Lệnh chuyển tiền đến ngân hàng có thể là?",
+        "options": [
+            "Lệnh chuyển đến vào tài khoản khách hàng",
+            "Lệnh chuyển đến nhận tiền Chứng minh thư.",
+            "Lệnh chuyển tiếp cho ngân hàng khác",
+            "Tất cả các ý trên."
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 61,
+        "question": "Ngân hàng A nhận lệnh thanh toán đến từ hệ thống Citad, sau khi hạch toán đến (khách hàng chưa nhận tiền), nhận được tra soát từ Ngân hàng phát lệnh yêu cầu hoàn trả lại lệnh do chuyển nhầm",
+        "options": [
+            "Ngân hàng A tiến hành hủy lệnh đến và thông báo Ngân hàng phát lệnh hủy lệnh chuyển tiền đi.",
+            "Ngân hàng A tiến hành tất toán lệnh đến và lập lệnh thanh toán đi để hoàn trả lại lệnh thanh toán cho Ngân hàng phát lệnh theo yêu cầu.",
+            "Ngân hàng gửi lệnh gửi tra soát và gửi kèm một lệnh báo nợ bằng số tiền của lệnh thanh toán chuyển nhầm về ngân hàng A.",
+            "Ngân hàng A trả lời không thể làm được."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 62,
+        "question": "Cho bảng dữ liệu quan hệ chuyển tiền 
+            loaichuyentien(machinhanh, loaidien)
+chuyentiendi(machinhanh, magiaodichdi, ngaygiaodich, loaitien, sotien, kh_chuyen, kh_nhan,  loaidien, trangthai)
+trong đó :
+trangthai(create(tạo lệnh),success(thành công), error(lỗi), delete(hủy))
+chuyentienden(machinhanh, magiaodichden ,ngaygiaodich, loaitien, sotien, kh_chuyen, kh_nhan, cmt,loaidien,  trangthai)
+trong đó:
+ trangthai(paid (đã trả tiền),delete(xóa), unpaid(chưa trả tiền))
 
-            },
-            {
-                id: 52,
-                question: "Tìm đáp án trả lời sai về vai trò của Cơ sở hạ tầng đối với Kiến trúc thượng tầng trong các đáp án dưới đây:",
-                options: [
-                    "Cơ sở hạ tầng nào thì sinh ra Kiến trúc thượng tầng ấy.",
-                    "Những biến đổi căn bản trong Cơ sở hạ tầng sớm hay muộn cũng sẽ dẫn tới sự biến đổi căn bản trong Kiến trúc thượng tầng.",
-                    "Cơ sở hạ tầng cũ mất đi thì Kiến trúc thượng tầng tương ứng với nó sẽ mất theo ngay tức khắc.",
-                    "Cũng có những yếu tố thuộc Kiến trúc thượng tầng cũ tồn tại dai dẳng sau khi Cơ sở kinh tế sinh ra nó không tồn tại."
-                ],
-                correctAnswer: 2,
-               
-            },
-            {
-                id: 53,
-                question: "Xác định quan niệm sai về Phủ định biện chứng trong các quan niệm dưới đây:",
-                options: [
-                    "Là phủ định có tính kế thừa.",
-                    "Là phủ định đồng thời cũng là sự khẳng định.",
-                    "Là phủ định chấm dứt quá trình phát triển.",
-                    "Là phủ định có tính khách quan, phổ biến"
-                ],
-                correctAnswer: 2,
-               
-            },
-            {
-                id: 54,
-                question: "Xác định quan niệm sai về mối quan hệ giữa Cái Chung với Cái Riêng trong các quan niệm dưới đây:",
-                options: [
-                    "Cái Chung chỉ tồn tại trong Cái Riêng, thông qua Cái Riêng mà biểu hiện sự tồn tại của mình.",
-                    "Quan hệ giữa Cái Chung và Cái Riêng là quan hệ có tính chủ quan.",
-                    "Quan hệ giữa Cái Chung và Cái Riêng là có tính phổ biến.",
-                    "Cái Riêng là cái toàn bộ, phong phú hơn Cái chung, Cái chung là cái bộ phận, nhưng sâu sắc hơn Cái riêng."
-                ],
-                correctAnswer: 1,
-            
-            },
-            {
-                id: 55,
-                question: "Chọn đáp án trả lời đúng trong các đáp án dưới đây:",
-                options: [
-                    "Triết học Mác là triết học tách rời giữa lý luận và thực tiễn.",
-                    "Triết học Mác là triết học thống nhất giữa lý luận và thực tiễn.",
-                    "Triết học Mác là triết học chỉ coi trọng thực tiễn.",
-                    "Triết học Mác là triết học chỉ coi trọng lý luận."
-                ],
-                correctAnswer: 1,
-     
-            },
-            {
-                id: 56,
-                question: 'Quan điểm: "Ý thức thật sự chỉ có tác dụng khi nó thông qua hoạt động thực tiễn của con người" thuộc về lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật biện chứng.",
-                    "Chủ nghĩa Duy vật siêu hình.",
-                    "Nhị nguyên luận.",
-                    "Chủ nghĩa Duy tâm chủ quan."
-                ],
-                correctAnswer: 0,
-               
-            },
-            {
-                id: 57,
-                question: 'Quan điểm: "Nội dung của chân lý lệ thuộc vào chủ quan của con người" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật biện chứng.",
-                    "Chủ nghĩa Duy vật siêu hình.",
-                    "Chủ nghĩa Duy tâm chủ quan.",
-                    "Chủ nghĩa Duy tâm khách quan."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 58,
-                question: 'Quan điểm: "Không có lý luận thì hoạt động thực tiễn của con người mò mẫm mất phương hướng. Lý luận không phục vụ cho thực tiễn, trở thành lý luận suông, giáo điều" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật biện chứng.",
-                    "Chủ nghĩa Duy vật siêu hình.",
-                    "Nhị nguyên luận.",
-                    "Chủ nghĩa Duy tâm khách quan."
-                ],
-                correctAnswer: 0,
-  
-            },
-            {
-                id: 59,
-                question: 'Quan điểm "Tính năng động chủ quan của ý thức con người muốn phát huy có hiệu quả bao giờ cũng phải dựa trên cơ sở vật chất" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật biện chứng.",
-                    "Chủ nghĩa Duy vật siêu hình.",
-                    "Nhị nguyên luận.",
-                    "Chủ nghĩa Duy tâm chủ quan."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 60,
-                question: 'Quan điểm "Mọi tri thức, dù trực tiếp hay gián tiếp, dù ở trình độ cao hay thấp, xét đến cùng đều dựa trên cơ sở thực tiễn" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật biện chứng.",
-                    "Chủ nghĩa Duy vật siêu hình.",
-                    "Nhị nguyên luận.",
-                    "hủ nghĩa Duy tâm chủ quan."
-                ],
-                correctAnswer: 0,
+. Xác định quan hệ thực thể của LOAICHUYENTIEN và CHUYENTIENDI",
+        "options": [
+            "Một - Một",
+            "Một -- Nhiều",
+            "Nhiều -- Một",
+            "Nhiều -- Nhiều"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 63,
+        "question": "Cho bảng dữ liệu quan hệ chuyển tiền
+            loaichuyentien(machinhanh, loaidien)
+chuyentiendi(machinhanh, magiaodichdi, ngaygiaodich, loaitien, sotien, kh_chuyen, kh_nhan,  loaidien, trangthai)
+trong đó :
+trangthai(create(tạo lệnh),success(thành công), error(lỗi), delete(hủy))
+chuyentienden(machinhanh, magiaodichden ,ngaygiaodich, loaitien, sotien, kh_chuyen, kh_nhan, cmt,loaidien,  trangthai)
+trong đó:
+ trangthai(paid (đã trả tiền),delete(xóa), unpaid(chưa trả tiền))
 
-            },
-            // Câu 61-70
-            {
-                id: 61,
-                question: 'Quan điểm "Thực tiễn là tiêu chuẩn của chân lý" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật biện chứng.",
-                    "Chủ nghĩa Duy vật siêu hình.",
-                    "Chủ nghĩa Duy vật tầm thường.",
-                    "Chủ nghĩa Duy tâm chủ quan."
-                ],
-                correctAnswer: 0,
-               
-            },
-            {
-                id: 62,
-                question: 'Luận điểm "Những thời đại kinh tế khác nhau không phải ở chỗ chúng sản xuất ra cái gì, mà là ở chỗ chúng sản xuất bằng cách nào, với những tư liệu lao động nào" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật lịch sử.",
-                    "Chủ nghĩa Duy vật tầm thường.",
-                    "Thuyết không thể biết.",
-                    "Chủ nghĩa Duy tâm lịch sử."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 63,
-                question: 'Điền đáp án đúng vào chỗ trống trong luận điểm sau: "Phương thức sản xuất đời sống vật chất ... toàn bộ quá trình đời sống xã hội, đời sống chính trị và đời sống tinh thần của xã hội":',
-                options: [
-                    "Thúc đẩy.",
-                    "chi phối.",
-                    "phụ thuộc.",
-                    "liên quan."
-                ],
-                correctAnswer: 1,
-            },
-            {
-                id: 64,
-                question: "Hãy chỉ ra một đáp án sai về yếu tố cấu thành Tồn tại xã hội trong các đáp án dưới đây:",
-                options: [
-                    "Hoàn cảnh tự nhiên.",
-                    "Văn hoá phi vật thể",
-                    "Dân cư.",
-                    "Phương thức sản xuất."
-                ],
-                correctAnswer: 1,
-            },
-            {
-                id: 65,
-                question: "Hãy chỉ ra một đáp án sai về kết cấu vật chất của Lực lượng sản xuất trong các đáp án dưới đây:",
-                options: [
-                    "Đối tượng lao động.",
-                    "Công cụ lao động.",
-                    "Người lao động.",
-                    "Tư liệu lao động."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 66,
-                question: 'Điền đáp án đúng vào chỗ trống trong luận điểm sau: "Theo quan điểm duy vật lịch sử, nhân tố ... trong lịch sử, xét đến cùng là sự sản xuất và tái sản xuất ra đời sống hiện thực":',
-                options: [
-                    "thứ yếu.",
-                    "chủ yếu.",
-                    "quan trọng.",
-                    "quyết định."
-                ],
-                correctAnswer: 3,
-
-            },
-            {
-                id: 67,
-                question: 'Điền đáp án đúng vào chỗ trống trong luận điểm sau: "Quy luật về sự phù hợp của quan hệ sản xuất với trình độ và tính chất của lực lượng sản xuất là quy luật... của sự phát triển xã hội":',
-                options: [
-                    "đặc thù.",
-                    "tạm thời.",
-                    "riêng biệt.",
-                    "chung nhất."
-                ],
-                correctAnswer: 3,
-   
-            },
-            {
-                id: 68,
-                question: 'Quan niệm "Sự thay thế phương thức sản xuất đã lỗi thời bằng phương thức sản xuất tiến bộ hơn, đó là cách mạng xã hội" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật lịch sử.",
-                    "Chủ nghĩa Duy tâm lịch sử.",
-                    "Chủ nghĩa Duy vật tầm thường.",
-                    "Chủ nghĩa Duy vật siêu hình."
-                ],
-                correctAnswer: 0,
-        
-            },
-            {
-                id: 69,
-                question: 'Luận điểm "Ý thức xã hội là sự phản ánh tích cực, năng động, sáng tạo tồn tại xã hội" thể hiện lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa Duy vật lịch sử.",
-                    "Chủ nghĩa Duy vật tầm thường.",
-                    "Chủ nghĩa Duy tâm chủ quan.",
-                    "Chủ nghĩa Duy tâm khách quan."
-                ],
-                correctAnswer: 0,
-             
-            },
-            {
-                id: 70,
-                question: 'Quan điểm "Ý thức xã hội là cái phản ánh tồn tại xã hội, vì vậy nó không có vai trò gì đối với tồn tại xã hội" biểu hiện lập trường triết học nào dưới đây:',
-                options: [
-                    "Nhị nguyên luận.",
-                    "Chủ nghĩa Duy vật lịch sử.",
-                    "Chủ nghĩa Duy vật siêu hình.",
-                    "Chủ nghĩa Duy tâm lịch sử."
-                ],
-                correctAnswer: 2,
-              
-            },
-            // Câu 71-80
-            {
-                id: 71,
-                question: "Hãy chọn đáp án đúng về mặt thứ nhất trong vấn đề cơ bản của triết học trong các đáp án dưới đây:",
-                options: [
-                    "Giữa vật chất và ý thức cái nào có trước, cái nào có sau, cái nào quyết định cái nào.",
-                    "Con người có khả năng nhận thức được thế giới hay không.",
-                    "Vấn đề mối quan hệ giữa vật chất và ý thức.",
-                    "Vấn đề mối quan hệ giữa tư duy và tồn tại."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 72,
-                question: "Hãy chọn đáp án đúng trong quan điểm về vật chất của các nhà triết học duy vật thời kỳ cổ đại trong các đáp án dưới đây:",
-                options: [
-                    "Xuất phát từ thế giới vật chất để đưa ra quan niệm về vật chất.",
-                    "Xuất phát từ Chúa trời để giải thích về vật chất.",
-                    "Xuất phát từ kinh nghiệm để giải thích về vật chất.",
-                    "Xuất phát từ trí tưởng tượng để giải thích về vật chất."
-                ],
-                correctAnswer: 0,
-
-            },
-            {
-                id: 73,
-                question: "Quan niệm coi vận động của vật chất chỉ là biểu hiện của vận động cơ học, là quan niệm của trường phái triết học nào trong các trường phái dưới đây:",
-                options: [
-                    "Chủ nghĩa duy vật ngây thơ chất phác thời cổ đại.",
-                    "Chủ nghĩa duy vật siêu hình thế kỷ 17-18.",
-                    "Chủ nghĩa duy vật biện chứng.",
-                    "Chủ nghĩa duy tâm thế kỷ 17-18."
-                ],
-                correctAnswer: 1,
-          
-            },
-            {
-                id: 74,
-                question: 'Quan điểm: "Vận động của tự nhiên và lịch sử là sự tha hóa từ sự vận động của ý niệm tuyệt đối" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa duy vật biện chứng.",
-                    "Chủ nghĩa duy tâm chủ quan.",
-                    "Chủ nghĩa duy tâm khách quan.",
-                    "Chủ nghĩa duy vật siêu hình."
-                ],
-                correctAnswer: 2,
-                
-            },
-            {
-                id: 75,
-                question: "Thế giới quan khoa học dựa trên lập trường triết học nào dưới đây:",
-                options: [
-                    "Chủ nghĩa duy tâm chủ quan.",
-                    "Chủ nghĩa duy vật biện chứng.",
-                    "Chủ nghĩa duy tâm khách quan.",
-                    "Nhị nguyên luận."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 76,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy vật siêu hình trong các luận điểm dưới đây:",
-                options: [
-                    "Vật chất và ý thức là hai nguồn gốc riêng biệt hình thành nên thế giới.",
-                    "Vận động là thuộc tính cố hữu của vật chất, gắn liền với vật chất.",
-                    "Vật chất và ý thức đều cùng tồn tại nên không có cái nào có trước và quyết định cái nào cả.",
-                    "Vật chất là cái có trước, ý thức là cái có sau; vật chất quyết định ý thức."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 77,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy vật biện chứng trong những luận điểm dưới đây:",
-                options: [
-                    "Việc phát huy tính năng động chủ quan phụ thuộc vào tính sáng tạo chủ quan của con người, không phụ thuộc vào hiện thực khách quan.",
-                    "Phát huy tính sáng tạo của con người bao giờ cũng dựa vào tiền đề vật chất.",
-                    "Ý thức do vật chất sinh ra và quyết định nên nó không có vai trò gì đối với hoạt động thực tiễn của con người.",
-                    "Ý thức của con người chẳng qua là bắt chước hiện thực khách quan và làm đúng như nó nên con người không có gì là sáng tạo cả."
-                ],
-                correctAnswer: 1,
-               
-            },
-            {
-                id: 78,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy tâm khách quan trong những luận điểm dưới đây:",
-                options: [
-                    "Vận động của tự nhiên và lịch sử là sự tha hóa từ sự vận động của ý niệm tuyệt đối.",
-                    "Vận động là thuộc tính cố hữu của vật chất, là phương thức tồn tại của vật chất.",
-                    "Đứng im là một trường hợp đặc biệt của vận động.",
-                    "Vận động của vật chất mang tính khách quan còn vận động của tinh thần mang tính chủ quan."
-                ],
-                correctAnswer: 0,
-
-            },
-            {
-                id: 79,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy vật siêu hình trong những luận điểm dưới đây:",
-                options: [
-                    "Ý thức do vật chất sinh ra và quyết định nhưng nó có tác động ngược trở lại với hoạt động thực tiễn của con người.",
-                    "Sự tác động của ý thức đối với vật chất phải thông qua hoạt động thực tiễn của con người.",
-                    "Ý thức giúp con người có tri thức về các sự vật, hiện tượng trong thế giới khách quan và các quy luật của sự vận động.",
-                    "Ý thức là sự phản ánh hiện thực khách quan một cách thụ động giống chiếc gương soi."
-                ],
-                correctAnswer: 3,
-                
-            },
-            {
-                id: 80,
-                question: "Hãy chọn ra quan điểm đúng nhất về triết học Mác trong các quan điểm dưới đây:",
-                options: [
-                    "Triết học Mác được xem là khoa học của các khoa học.",
-                    "Triết học Mác nghiên cứu những quy luật chung nhất của tự nhiên, xã hội và tư duy trên lập trường duy vật triệt để.",
-                    "Triết học Mác xem xét thế giới như một bức tranh do các yếu tố rời rạc cấu thành.",
-                    "Triết học Mác xem xét giới tự nhiên và con người như những hệ thống máy móc phức tạp, không liên quan gì đến nhau."
-                ],
-                correctAnswer: 1,
-              
-            },
-            // Câu 81-90
-            {
-                id: 81,
-                question: 'Nhận định: "Nhân tố kinh tế là nhân tố duy nhất quyết định sự phát triển của xã hội" thuộc lập trường triết học nào dưới đây:',
-                options: [
-                    "Chủ nghĩa duy vật biện chứng.",
-                    "Chủ nghĩa duy tâm.",
-                    "Nhị nguyên luận.",
-                    "Chủ nghĩa duy kinh tế."
-                ],
-                correctAnswer: 3,
-             
-            },
-            {
-                id: 82,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy vật biện chứng trong các luận điểm dưới đây:",
-                options: [
-                    "Vật chất là cái có trước, ý thức là cái có sau và phụ thuộc hoàn toàn vào vật chất.",
-                    "Vật chất là cái sinh ra ý thức, ý thức do vật chất quyết định nhưng sau khi ra đời nó tác động trở lại vật chất thông qua hoạt động thực tiễn của con người.",
-                    "Ý thức do vật chất sinh ra và tác động trở lại vật chất nên chúng có vai trò như nhau trong hoạt động thực tiễn của con người.",
-                    "Ý thức là cái có trước và quyết định vật chất. Vật chất là cái có sau, phụ thuộc vào ý thức."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 83,
-                question: "Hãy chỉ ra luận điểm thuộc lập trường Duy tâm chủ quan trong các luận điểm dưới đây:",
-                options: [
-                    "Cảm giác, ý thức là cái có trước và tồn tại sẵn trong con người, các sự vật bên ngoài chỉ là phức hợp của các cảm giác ấy mà thôi.",
-                    "Vận động của tự nhiên và lịch sử là sự tha hóa từ sự vận động của ý niệm tuyệt đối.",
-                    "Ý thức do vật chất sinh ra và quyết định, vì vậy nó không có vai trò gì đối với hoạt động thực tiễn của con người.",
-                    "Vật chất là cái có trước và quyết định ý thức, nhưng sau khi ra đời ý thức tác động trở lại vật chất thông qua hoạt động thực tiễn của con người."
-                ],
-                correctAnswer: 0,
-        
-            },
-            {
-                id: 84,
-                question: "Xác định đáp án đúng nhất về nguyên tắc được rút ra từ nguyên lý về mối quan hệ biện chứng giữa vật chất và ý thức trong các đáp án dưới đây:",
-                options: [
-                    "Nguyên tắc toàn diện.",
-                    "Nguyên tắc lịch sử - cụ thể.",
-                    "Nguyên tắc khách quan.",
-                    "Nguyên tắc phát triển."
-                ],
-                correctAnswer: 2,
-  
-            },
-            {
-                id: 85,
-                question: "Xác định đáp án sai về kết cấu của ý thức trong các đáp án dưới đây:",
-                options: [
-                    "Theo chiều sâu của ý thức bao gồm các yếu tố: tự ý thức, tiềm thức, vô thức.",
-                    "Theo chiều ngang của ý thức bao gồm các yếu tố: tri thức, tình cảm, niềm tin, ý chí... trong đó tri thức là yếu tố cơ bản, cốt lõi nhất.",
-                    "Theo chiều ngang của ý thức bao gồm các yếu tố: tự ý thức, tiềm thức, vô thức.",
-                    "Tự ý thức là ý thức hướng về nhận thức bản thân mình trong mối quan hệ với ý thức về thế giới bên ngoài."
-                ],
-                correctAnswer: 2,
-               
-            },
-            {
-                id: 86,
-                question: "Xác định đáp án sai về tiềm thức trong các đáp án dưới đây:",
-                options: [
-                    "Tiềm thức là những hoạt động tâm lý diễn ra bên ngoài sự kiểm soát của ý thức.",
-                    "Tiềm thức là những tri thức mà chủ thể đã có từ trước nhưng đã hình thành bản năng, thành kỹ năng trong tầng sâu ý thức của chủ thể, là ý thức ở dạng tiềm tàng.",
-                    "Tiềm thức có thể tự động gây ra các hoạt động tâm lý và nhận thức mà chủ thể không cần kiểm soát chúng một cách trực tiếp.",
-                    "Tiềm thức không thể tự động gây ra các hoạt động tâm lý và nhận thức mà chủ thể không cần kiểm soát chúng một cách trực tiếp."
-                ],
-                correctAnswer: 3,
-             
-            },
-            {
-                id: 87,
-                question: "Xác định đáp án sai về bản chất của ý thức trong các đáp án dưới đây:",
-                options: [
-                    "Ý thức là hình ảnh chủ quan của thế giới khách quan.",
-                    "Ý thức có tính tích cực, sáng tạo gắn bó chặt chẽ với thực tiễn xã hội.",
-                    "Ý thức là hình thức phản ánh cao nhất riêng có của óc người về hiện thực khách quan trên cơ sở thực tiễn -- xã hội.",
-                    "Ý thức là hình ảnh khách quan về thế giới chủ quan."
-                ],
-                correctAnswer: 3,
-            
-            },
-            {
-                id: 88,
-                question: "Xác định đáp án đúng nhất về nguyên tắc được rút ra từ nguyên lý về mối liên hệ phổ biến trong các đáp án dưới đây:",
-                options: [
-                    "Nguyên tắc khách quan.",
-                    "Nguyên tắc phát triển.",
-                    "Nguyên tắc toàn diện.",
-                    "Nguyên tắc khách quan và nguyên tắc phát triển."
-                ],
-                correctAnswer: 2,
-               
-            },
-            {
-                id: 89,
-                question: "Xác định đáp án đúng về vị trí, vai trò của quy luật mâu thuẫn trong các đáp án dưới đây:",
-                options: [
-                    "Là khuynh hướng của sự vận động, phát triển của sự vật hiện tượng.",
-                    "Là nguồn gốc, động lực của sự vận động, phát triển của sự vật hiện tượng.",
-                    "Là cách thức diễn ra sự vận động phát triển của sự vật hiện tượng.",
-                    "Là cơ sở của sự vận động, phát triển của sự vật hiện tượng."
-                ],
-                correctAnswer: 1,
-               
-            },
-            {
-                id: 90,
-                question: "Xác định đáp án sai về sự đấu tranh của các mặt đối lập trong các đáp án dưới đây:",
-                options: [
-                    "Sự đấu tranh của các mặt đối lập là tuyệt đối, là thường xuyên, gắn liền với tính tuyệt đối của sự vận động của sự vật nói riêng, của thế giới hiện thực nói chung.",
-                    "Sự đấu tranh của các mặt đối lập là một quá trình phức tạp, chia thành nhiều giai đoạn, mỗi giai đoạn có những đặc điểm riêng.",
-                    "Nhờ có sự đấu tranh của các mặt đối lập mà sự vật mới xuất hiện thay thế sự vật cũ, thế giới luôn luôn vận động, phát triển.",
-                    "Sự đấu tranh của các mặt đối lập là tương đối, gắn liền với tính tương đối của sự vận động của sự vật nói riêng, của thế giới hiện thực nói chung."
-                ],
-                correctAnswer: 3,
-                
-            },
-            // Câu 91-100
-            {
-                id: 91,
-                question: 'Điền từ vào chỗ trống để hoàn thiện luận điểm sau: "... hình thành một cách khách quan, là quan hệ đầu tiên, cơ bản chủ yếu, quyết định mọi quan hệ xã hội".',
-                options: [
-                    "Quan hệ giai cấp.",
-                    "Quan hệ dân tộc.",
-                    "Quan hệ gia đình.",
-                    "Quan hệ sản xuất."
-                ],
-                correctAnswer: 3,
-                
-            },
-            {
-                id: 92,
-                question: "Tìm đáp án đúng nhất bàn về vai trò của Biểu tượng trong các đáp án dưới đây:",
-                options: [
-                    "Là hình ảnh chủ quan của thế giới khách quan.",
-                    "Phản ánh khách thể một cách gián tiếp.",
-                    "Là sản phẩm của những tri giác cảm tính trước đó",
-                    "Là khâu trung gian giữa trực quan sinh động và tư duy trừu tượng."
-                ],
-                correctAnswer: 3,
-               
-            },
-            {
-                id: 93,
-                question: "Hãy chỉ ra một luận điểm viết sai về Tri giác trong các luận điểm dưới đây:",
-                options: [
-                    "Là hình thức cơ bản của nhận thức cảm tính.",
-                    "Là hình thức liên hệ giữa các khái niệm.",
-                    "Phản ánh đối tượng có tính toàn vẹn trực tiếp nhờ sự tổng hợp nhiều thuộc tính khác nhau của sự vật do nhiều cảm giác đem lại.",
-                    "Từ tri giác nhận thức cảm tính chuyển sang hình thức cao hơn đó là biểu tượng."
-                ],
-                correctAnswer: 1,
-      
-            },
-            {
-                id: 94,
-                question: "Tìm đáp án sai về Khái niệm trong các đáp án dưới đây:",
-                options: [
-                    "Là hình thức cơ bản của tư duy trừu tượng.",
-                    "Là kết quả của sự tổng hợp, khái quát những tài liệu do nhận thức cảm tính đem lại.",
-                    "Bao quát những thuộc tính cơ bản có tính bản chất của cả một lớp sự vật.",
-                    "Là giai đoạn đầu tiên, đơn giản nhất của nhận thức cảm tính."
-                ],
-                correctAnswer: 3,
-         
-            },
-            {
-                id: 95,
-                question: "Hãy phát hiện một quan điểm sai về nguyên tắc thống nhất giữa lý luận và thực tiễn trong các đáp án dưới đây:",
-                options: [
-                    "Lý luận đóng vai trò quyết định đối với thực tiễn.",
-                    "Thực tiễn là hoạt động vật chất còn lý luận là hoạt động tinh thần.",
-                    "Thực tiễn mà không có lý luận hướng dẫn thì thành thực tiễn mù quáng.",
-                    "Lý luận không liên hệ với thực tiễn là lý luận suông."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 96,
-                question: "Xác định đáp án đúng nhất về cơ sở lý luận của nguyên tắc lịch sử - cụ thể trong các đáp án dưới đây:",
-                options: [
-                    "Dựa trên nguyên lý về mối liên hệ phổ biến và nguyên lý về sự phát triển.",
-                    "Dựa trên mối quan hệ biện chứng giữa tồn tại xã hội và ý thức xã hội.",
-                    "Dựa trên mối quan hệ biện chứng giữa lực lượng sản xuất và quan hệ sản xuất.",
-                    "Dựa trên mối quan hệ biện chứng giữa cơ sở hạ tầng và kiến trúc thượng tầng."
-                ],
-                correctAnswer: 0,
-                
-            },
-            {
-                id: 97,
-                question: "Xác định đáp án sai về khái niệm Phát triển trong các đáp án dưới đây:",
-                options: [
-                    "Khái niệm phát triển không đồng nhất với khái niệm vận động nói chung.",
-                    "Khái niệm phát triển đồng nhất với khái niệm vận động nói chung.",
-                    "Sự phát triển là quá trình vận động tiến lên từ thấp đến cao, từ đơn giản đến phức tạp, từ kém hoàn thiện đến hoàn thiện hơn của một sự vật.",
-                    "Sự phát triển là là kết quả thay đổi của quá trình thay đổi dần về lượng dẫn đến sự thay đổi về chất, quá trình diễn ra theo đường xoắn ốc và hết mỗi chu kỳ sự vật lặp lại dường như sự vật ban đầu nhưng ở mức độ cao hơn."
-                ],
-                correctAnswer: 1,
-
-            },
-            {
-                id: 98,
-                question: "Xác định đáp án thể hiện lập trường siêu hình về Sự phát triển trong các đáp án dưới đây:",
-                options: [
-                     "Sự phát triển chỉ là sự tăng, giảm thuần tuý về lượng, không có sự thay đổi về chất của sự vật, hiện tượng.",
-                    "Sự phát triển dùng để chỉ quá trình vận động của sự vật, hiện tượng theo khuynh hướng đi lên: từ trình độ thấp đến trình độ cao, từ kém hoàn thiện đến hoàn thiện hơn.",
-                    "Sự phát triển không phải là sự biến đổi tăng lên hay giảm đi đơn thuần về lượng hay sự biến đổi tuần hoàn lặp đi lặp lại ở chất cũ mà là sự biến đổi về chất theo hướng càng ngày càng hoàn thiện của sự vật ở những trình độ ngày càng cao hơn.",
-                    "Sự phát triển cũng là quá trình phát sinh và giải quyết mâu thuẫn khách quan vốn có của sự vật hiện tượng, là quá trình thống nhất giữa phủ định các nhân tố tiêu cực và kế thừa, nâng cao nhân tố tích cực từ sự vật, hiện tượng cũ trong hình thái của sự vật, hiện tượng mới."
-                ],
-                correctAnswer: 0,
-              
-            },
-            {
-                id: 99,
-                question: "Xác định đáp án đúng nhất về nguyên tắc Phát triển trong các đáp án dưới đây:",
-                options: [
-                    "Nguyên tắc phát triển đối lập với quan điểm chủ quan duy ý chí.",
-                    "Nguyên tắc phát triển đối lập với quan điểm bảo thủ, trì trệ, định kiến.",
-                    "Nguyên tắc phát triển đối lập với quan điểm lịch sử - cụ thể.",
-                    "Nguyên tắc phát triển đối lập với quan điểm phiến diện, một chiều."
-                ],
-                correctAnswer: 1,
-               
-            },
-            {
-                id: 100,
-                question: "Xác định đáp án sai về mối quan hệ giữa cái Riêng, cái Chung và cái Đơn nhất trong các đáp án dưới đây:",
-                options: [
-                    "Cái Chung chỉ tồn tại trong cái Riêng, thông qua cái Riêng mà biểu hiện sự tồn tại của mình.",
-                    "Cái Riêng chỉ tồn tại trong mối liên hệ với cái Chung.",
-                    "Cái Riêng là cái toàn bộ, phong phú hơn cái Chung, cái Chung là cái bộ phận, nhưng sâu sắc hơn cái Riêng.",
-                    "ái Riêng là cái bộ phận, sâu sắc hơn cái Chung, cái Chung là cái toàn thể, phong phú hơn cái Riêng."
-                ],
-                correctAnswer: 3,
-       
-            },
-            // Câu 101-110
-            {
-                id: 101,
-                question: "Hãy xác định đáp án đúng theo quan điểm Chủ nghĩa duy vật biện chứng về vai trò của Ý thức trong các đáp án dưới đây:",
-                options: [
-                    "Ý thức tự nó chỉ làm thay đổi tư tưởng. Như vậy ý thức hoàn toàn không có tác dụng gì đối với thực tiễn.",
-                    "Ý thức là phản ánh năng động, sáng tạo thực tại khách quan và đồng thời có tác động trở lại mạnh mẽ thực tại đó thông qua hoạt động thực tiễn của con người.",
-                    "Ý thức là cái phụ thuộc vào nguồn gốc sinh ra nó. Vì thế chỉ có vật chất mới là cái năng động, tích cực.",
-                    "Ý thức là cái quyết định vật chất . Vật chất chỉ là cái thụ động."
-                ],
-                correctAnswer: 1,
-            },
-            {
-                id: 102,
-                question: "Hãy xác định câu trả lời theo quan điểm siêu hình về Mối liên hệ giữa các sự vật, hiện tượng trong thế giới hiện thực khách quan trong các câu trả lời dưới đây:",
-                options: [
-                    "Là sự tác động lẫn nhau, chi phối chuyển hoá lẫn nhau một cách khách quan, phổ biến, nhiều vẻ giữa các mặt, quá trình của sự vật, hiện tượng, hoặc giữa các sự vật, hiện tượng.",
-                    "Là sự thừa nhận rằng giữa các mặt của sự vật, hiện tượng và giữa các sự vật với nhau trong thực tế khách quan không có mối liên hệ nào cả.",
-                    "Quan điểm cho rằng ngoài tính khách quan, tính phổ biến của mối liên hệ còn có quan điểm về tính phong phú của mối liên hệ.",
-                    "Là sự tác động lẫn nhau, có tính khách quan, phổ biến, nhiều vẻ, có thể chuyển hoá cho nhau."
-                ],
-                correctAnswer: 1,
-                
-            },
-            {
-                id: 103,
-                question: "Hãy xác định luận điểm thể hiện quan điểm siêu hình về Sự phát triển trong các luận điểm dưới đây:",
-                options: [
-                    "Sự phát triển là xu hướng vận động làm nảy sinh cái mới",
-                    "Sự phát triển là xu hướng thống trị của thế giới, tiến lên từ đơn giản đến phức tạp, từ thấp đến cao, từ kém hoàn thiện đến hoàn thiện hơn theo những quy luật nhất định.",
-                    "Sự phát triển là xu hướng vận động tiến lên từ thấp đến cao, từ đơn giản đến phức tạp, từ kém hoàn thiện đến hoàn thiện hơn của các sự vật hiện tượng.",
-                    "Sự phát triển là xu hướng vận động làm cho sự vật, hiện tượng tăng lên chỉ về khối lượng, thể tích, quy mô, trọng lượng, kích thước."
-                ],
-                correctAnswer: 3,
-               
-            },
-            {
-                id: 104,
-                question: "Hãy xác định luận điểm thể hiện quan điểm siêu hình về ý nghĩa phương pháp luận của Mối quan hệ biện chứng giữa Bản chất và Hiện tượng trong các luận điểm dưới đây:",
-                options: [
-                    "Hiện tượng thường làm sai lệch bản chất nên cần thận trọng trong nghiên cứu những biểu hiện bên ngoài của sự vật.",
-                    "Phương pháp nhận thức đúng là đi từ hiện tượng đến bản chất, đi từ bản chất ít sâu sắc đến bản chất sâu sắc hơn, không nhầm lẫn hiện tượng với bản chất.",
-                    "Để nghiên cứu bản chất của sự vật cần nghiên cứu toàn diện các hiện tượng của nó.",
-                    "Muốn nhận thức đúng bản chất, con người đi thẳng vào tìm hiểu và nắm lấy bản chất sẽ tránh được sai lầm."
-                ],
-                correctAnswer: 3,
-
-            },
-            {
-                id: 105,
-                question: "Hãy chỉ ra luận điểm sai về ý nghĩa phương pháp luận của mối quan hệ giữa Nội dung và Hình thức trong các luận điểm dưới đây:",
-                options: [
-                    "Trong nhận thức và hành động không được tách rời hoặc tuyệt đối hoá một mặt nội dung hay hình thức.",
-                    "Trong nhận thức và hành động không được tách rời, tuyệt đối hoá một mặt nội dung hay hình thức. Trước hết phải chú trọng vai trò quyết định của hình thức đồng thời coi trọng nội dung.",
-                    "Trong nhận thức và hành động không được tách rời, tuyệt đối hoá một mặt nội dung hay hình thức. Trước hết phải chú trọng vai trò quyết định của nội dung, nhưng phải chú trọng tới hình thức.",
-                    "Trong nhận thức và hành động không được tuyệt đối hoá một mặt nội dung hay hình thức."
-                ],
-                correctAnswer: 1,
-       
-            },
-            {
-                id: 106,
-                question: "Tìm luận điểm Siêu hình về quan hệ giữa Nguyên nhân và Kết quả trong các luận điểm dưới đây:",
-                options: [
-                    "Trong những điều kiện xác định, nguyên nhân có trước kết quả, một nguyên nhân sinh ra nhiều kết quả và ngược lại, nguyên nhân và kết quả có thể chuyển hoá cho nhau.",
-                    "Trong điều kiện xác định, nguyên nhân có trước kết quả, một nguyên nhân chỉ sinh ra một kết quả và ngược lại, nguyên nhân và kết quả không thể chuyển hoá cho nhau.",
-                    "Trong điều kiện xác định, nguyên nhân có sau kết quả. Một nguyên nhân có thể sinh ra nhiều kết quả và ngược lại. Nguyên nhân và kết quả có thể chuyển hoá cho nhau.",
-                    "Trong điều kiện xác định, nguyên nhân có trước kết quả, một nguyên nhân sinh ra nhiều kết quả và ngược lại. Nguyên nhân và kết quả có thể chuyển hoá cho nhau trong quá trình vận động."
-                ],
-                correctAnswer: 1,
-            },
-            {
-                id: 107,
-                question: "Tìm luận điểm Duy tâm về quan hệ Nguyên nhân -- Kết quả trong các luận điểm dưới đây:",
-                options: [
-                    "Để có kết quả theo mong muốn phải biết phát hiện và điều khiển các nguyên nhân, khắc phục những nguyên nhân ngược chiều, tạo điều kiện cho nguyên nhân cùng chiều hướng tới kết quả.",
-                    "Trong quá trình vận động, phát triển, nguyên nhân và kết quả có thể đổi chỗ, chuyển hóa cho nhau.",
-                    "Quan hệ nhân quả là quan hệ do chủ quan của con người tạo ra cho nên trong nhận thức và hành động con người chắc chắn nhận được kết quả do mình tạo ra.",
-                    "Nguyên nhân có trước kết quả vì thế cứ chờ đợi thì sớm hay muộn kết quả sẽ tới."
-                ],
-                correctAnswer: 2,
-           
-            },
-            {
-                id: 108,
-                question: "Tìm luận điểm Bất khả tri về mối quan hệ giữa cái Tất nhiên và Ngẫu nhiên trong các luận điểm dưới đây:",
-                options: [
-                    "Thông qua nghiên cứu nhiều cái ngẫu nhiên để phát hiện cái tất nhiên. Nắm lấy cái tất nhiên để hành động đồng thời dự phòng xử lý kịp thời với cái ngẫu nhiên.",
-                    "Mục đích của nhận thức và hành động là đạt tới cái tất nhiên để có tự do. Nhưng cái tất nhiên tồn tại như vật tự nó nên con người chỉ có thể nắm được cái ngẫu nhiên",
-                    "Nắm lấy cái tất nhiên, chi phối, điều khiển, phòng ngừa cái ngẫu nhiên. Đó là mục đích của nhận thức và hành động của con người trong khi giải quyết mối quan hệ giữa tất nhiên và ngẫu nhiên.",
-                    "Nắm lấy cái tất nhiên để chi phối, điều khiển, phòng ngừa mặt tác hại của ngẫu nhiên. Đó là mục đích của nhận thức và hành động không phải bằng cách đi từ phân tích ngẫu nhiên mà đi thẳng vào cái tất nhiên."
-                ],
-                correctAnswer: 1,
-               
-            },
-            {
-                id: 109,
-                question: "Tìm đáp án thể hiện quan điểm Duy tâm về Thực tiễn trong các đáp án dưới đây:",
-                options: [
-                    "Là toàn bộ những hoạt động có tính vật chất, tính mục đích, tính xã hội - lịch sử của con người làm biến đổi tự nhiên, xã hội theo hướng tích cực, tiến bộ, trong đó sản xuất vật chất là thực tiễn cơ bản nhất.",
-                    "Là toàn bộ những hoạt động của con người có tính mục đích, tính xã hội- lịch sử làm biến đổi tự nhiên, xã hội theo hướng tích cực, tiến bộ, trong đó sản xuất vật chất là thực tiễn cơ bản nhất.",
-                    "Là toàn bộ những hoạt động của con người có tính mục đích, tính vật chất, làm biến đổi tự nhiên, xã hội theo hướng tích cực, trong đó sản xuất vật chất là thực tiễn cơ bản nhất.",
-                    "Là toàn bộ những hoạt động của con người có tính mục đích, tính vật chất, tính lịch sử - xã hội, trong đó sản xuất tinh thần là thực tiễn cơ bản nhất."
-                ],
-                correctAnswer: 3,
-             
-            },
-            {
-                id: 110,
-                question: "Vận dụng quan điểm Duy vật biện chứng để tìm đáp án đúng nhất trong các đáp án dưới đây:",
-                options: [
-                    "Do vật chất quyết định ý thức nên chỉ cần tăng lương cho người lao động là họ sẽ hăng hái sản xuất ra nhiều sản phẩm tốt.",
-                    "Do vai trò tác động tích cực của ý thức nên chỉ cần thường xuyên giáo dục ý thức, tư tưởng cho người lao động là họ sẽ tự giác hăng hái sản xuất ra nhiều sản phẩm tốt.",
-                    "Vì vật chất và ý thức có quan hệ biện chứng nên đối với người lao động phải vừa khuyến khích vật chất vừa giáo dục chính trị tư tưởng.",
-                    "Vì chân lý là cụ thể nên phải tuỳ hoàn cảnh, tuỳ đối tượng cụ thể mà tăng thêm khuyến khích vật chất hoặc tăng cường giáo dục chính trị tư tưởng."
-                ],
-                correctAnswer: 3,
-                
-            },
-            
-        
-            {
-                id: 111,
-                question: "Chọn luận điểm đúng nhất về quy luật Phủ định của phủ định trong các luận điểm dưới đây:",
-                options: [
-                    "Đặc điểm quan trọng nhất của quy luật phủ định của phủ định là phủ định hai lần",
-                    "Đặc điểm quan trọng nhất của quy luật phủ định của phủ định là sự phát triển do mâu thuẫn bên trong.",
-                    "Đặc điểm quan trọng nhất của quy luật phủ định của phủ định là phát triển theo chu kỳ.",
-                    "Đặc điểm quan trọng nhất của quy luật phủ định của phủ định là tính kế thừa, tính lặp lại và tính chất tiến lên của sự phát triển."
-                ],
-                correctAnswer: 3,
-                
-            },
-            {
-                id: 112,
-                question: "Tìm đáp án đúng và đầy đủ nhất về nội dung quy luật Phủ định của phủ định trong các đáp án dưới đây:",
-                options: [
-                    "Phủ định của phủ định là sự lặp lại hoàn toàn cái ban đầu.",
-                    "Phủ định của phủ định là sự tổng hợp biện chứng của cái khẳng định ban đầu và cái phủ định lần thứ nhất.",
-                    "Phủ định của phủ định là sự phủ định trong đó sự xuất hiện cái mới như là kết quả tổng hợp của những yếu tố tích cực trong cái khẳng định ban đầu và trong cái phủ định lần thứ nhất.",
-                    "Phủ định của phủ định là sự phủ định trong đó sự xuất hiện cái mới có nội dung toàn diện, phong phú và cao hơn cái khẳng định ban đầu và cái phủ định lần thứ nhất."
-                ],
-                correctAnswer: 3,
-             
-},
-
-{
-        id: 113,
-        question: "Tìm đáp án đúng và đầy đủ nhất về Vận động trong các đáp án dưới đây:",
-        options: [
-            "Là phương thức tồn tại, thuộc tính cố hữu của vật chất, bao gồm tất cả mọi sự thay đổi và mọi quá trình diễn ra trong vũ trụ, kể từ sự thay đổi vị trí đơn giản cho đến tư duy.",
-            "Là phương thức tồn tại của vật chất, bao gồm tất cả mọi sự thay đổi và mọi quá trình diễn ra trong vũ trụ, kể từ sự thay đổi vị trí đơn giản đến vận động tư duy.",
-            "Là phương thức tồn tại, thuộc tính cố hữu của vật chất bao gồm mọi sự thay đổi và mọi quá trình diễn ra trong hành tinh của chúng ta kể từ sự thay đổi vị trí giản đơn đến tư duy.",
-            "Là phương thức tồn tại, thuộc tính cố hữu của vật chất bao gồm mọi sự thay đổi và mọi quá trình diễn ra trong trái đất của chúng ta, kể từ sự thay đổi vị trí giản đơn đến tư duy."
+. Xác định quan hệ thực thể của LOAICHUYENTIEN và CHUYENTIENDEN",
+        "options": [
+            "Một - Một",
+            "Một -- Nhiều",
+            "Nhiều -- Một",
+            "Nhiều -- Nhiều"
         ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 114
-    {
-        id: 114,
-        question: "Tìm luận điểm đúng nhất về mối quan hệ biện chứng giữa Đứng im và Vận động của vật chất trong các luận điểm dưới đây:",
-        options: [
-            "Vận động của vật chất là tuyệt đối, còn sự đứng im là tương đối nhằm bảo đảm các dạng cụ thể của vật chất phân hoá trong tồn tại. Đứng im và vận động là một mâu thuẫn biện chứng.",
-            "Từng hình thức vận động của vật chất chỉ tồn tại tương đối với đặc trưng của những dạng vật chất cụ thể, còn sự vận động của vật chất là tuyệt đối nói chung, nó chỉ khác nhau mà không có mâu thuẫn.",
-            "Các hình thức vận động chuyển hoá cho nhau từ thấp đến cao và ngược lại gây ra sự đứng im là tương đối, sự vận động là một mâu thuẫn biện chứng.",
-            "Sự đứng im tương đối và sự vận động là tuyệt đối của vật chất thể hiện sự phân hoá của vật chất về lượng mà không thay đổi về chất."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 115
-    {
-        id: 115,
-        question: "Tìm đáp án đúng nhất về nguồn gốc tự nhiên của Ý thức trong các đáp án dưới đây:",
-        options: [
-            "Bộ óc người cùng với thế giới bên ngoài tác động lên bộ óc- đó là nguồn gốc tự nhiên của ý thức.",
-            "Ý thức có nguồn gốc siêu nhiên, đó là sản phẩm tinh thần đặc biệt được tạo hoá kết tinh lại gọi là tinh thần thế giới tha hoá vào con người.",
-            "Ý thức có nguồn gốc tự nhiên, ở mọi dạng vật chất đều có vì thế con người có ý thức cũng giống như gan tiết ra mật, cây sinh ra quả vậy.",
-            "Đi tìm nguồn gốc của sự hình thành ý thức không phải tìm ở thế giới bên ngoài con người, mà tìm thấy từ bên trong con người. Đó là tổng hợp các cảm giác của con người. Điều đó khẳng định không có cảm giác thì không có ý thức."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 116
-    {
-        id: 116,
-        question: "Tìm đáp án đúng nhất về nguồn gốc xã hội của Ý thức trong các đáp án dưới đây:",
-        options: [
-            "Ý thức con người trực tiếp được hình thành từ quá trình lao động và ngôn ngữ.",
-            "Sự hình thành ý thức con người có 2 nguồn gốc tự nhiên và xã hội, trong đó nguồn gốc xã hội là gián tiếp còn nguồn gốc tự nhiên là trực tiếp hình thành.",
-            "Ý thức có hai nguồn gốc: tự nhiên và xã hội. Nguồn gốc xã hội chứng tỏ ý thức con người giống động vật cũng có hệ thần kinh trung ương - não người.",
-            "Triết học duy tâm chủ quan cho ý thức con người là tổng hợp của các cảm giác."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 117
-    {
-        id: 117,
-        question: "Xác định đáp án đúng nhất về bản chất của Ý thức trong các đáp án dưới đây:",
-        options: [
-            "Là sản phẩm của một dạng vật chất - đó là não người. Não người sinh ra ý thức cũng như mọi sản phẩm vật chất khác do con người tạo ra.",
-            "Là hình ảnh khách quan của thế giới chủ quan.",
-            "Triết học duy vật siêu hình giải thích bản chất ý thức là sự phản ánh hiện thực khách quan một cách thụ động hoàn toàn giống cái gương soi.",
-            "Là sự phản ánh tích cực, năng động, sáng tạo thế giới khách quan bằng não người."
-        ],
-        correctAnswer: 3,
-    },
-    // Câu 118
-    {
-        id: 118,
-        question: "Tìm đáp án đúng nhất về mối quan hệ giữa Vật chất và Ý thức trong các đáp án dưới đây:",
-        options: [
-            "Giới tự nhiên, xã hội có trước và sinh ra ý thức, còn ý thức có sau và phụ thuộc hoàn toàn vào vật chất.",
-            "Ý thức được vật chất sinh ra và quyết định, nhưng sau khi ra đời nó tác động tích cực trở lại vật chất thông qua nhận thức và hoạt động thực tiễn.",
-            "Không có con người, không có cảm giác của con người thì mọi cái tồn tại ngoài con người đều trở thành không xác định. Vì thế sự tồn tại con người có trước tất cả và quyết định tất cả.",
-            "Thế giới trước hết có cái tinh thần. Nó được triển khai do quá trình phát triển theo các quy luật biện chứng thành thế giới vật chất và con người. Con người trở lại tự nhận thức mình cũng là cái tinh thần có đầu tiên trở lại tự nhận thức mình."
-        ],
-        correctAnswer: 1,
-       
-    },
-    // Câu 119
-    {
-        id: 119,
-        question: "Tìm câu trả lời đúng nhất về những điều kiện đảm bảo cho Ý thức có tính năng động, sáng tạo trong những câu dưới đây:",
-        options: [
-            "Ý thức chỉ phụ thuộc vật chất khi nó sinh ra (nguồn gốc). Còn khi đã hình thành thì nó không còn phụ thuộc vào vật chất nữa, nó có đời sống riêng. Chỉ khi đó ý thức mới phát huy được tính năng động, sáng tạo.",
-            "Sự năng động, sáng tạo của ý thức luôn luôn dựa trên những tiền đề vật chất và hoạt động thực tiễn của con người.",
-            "Sáng tạo của ý thức không phụ thuộc vào điều kiện vật chất. Nó hoạt động độc lập, năng động, chủ quan.",
-            "Ý thức và vật chất có vai trò ngang nhau, chúng tự thân vận động theo quy luật riêng của chúng."
-        ],
-        correctAnswer: 1,
-      
-    },
-    // Câu 120
-    {
-        id: 120,
-        question: "Tìm câu trả lời đúng nhất về mối quan hệ biện chứng giữa Lượng và Chất của sự vật trong các câu dưới đây:",
-        options: [
-            "Sự vật nào cũng có sự thống nhất giữa Lượng và Chất. Chất và Lượng có mâu thuẫn với nhau. Sự biến đổi về Lượng tích luỹ lại dẫn đến sự biến đổi về Chất. Sự biến đổi căn bản về Chất tạo ra bước nhảy và chuyển sự vật cũ sang sự vật mới.",
-            "Sự biến đổi về Chất và Lượng không phải mâu thuẫn. Chỉ có sự khác nhau là Lượng biến đổi nhanh hơn Chất. Bước nhảy chỉ xảy ra khi chất biến đổi căn bản.",
-            "Sự biến đổi về Chất nhanh hơn biến đổi về Lượng mới tạo ra bước thay đổi căn bản về Chất. Chất cũ mất đi, sự vật cũ bị phá vỡ, sự vật mới sinh ra.",
-            "Chỉ có sự thay đổi từ Lượng đến Chất là theo xu hướng tiến lên. Còn sự thay đổi từ Chất đến Lượng là không thể diễn ra."
-        ],
-        correctAnswer: 0,
-   
-    },
-    // Câu 121
-    {
-        id: 121,
-        question: "Tìm câu trả lời đúng nhất về nội dung quy luật Phủ định của phủ định trong các câu dưới đây:",
-        options: [
-            "Là phủ định lần thứ hai, vừa phủ định lại vừa khẳng định lần phủ định thứ nhất, làm cho sự vận động diễn ra theo đường xoáy ốc, sự vật hình như lặp lại cái cũ nhưng trên cơ sở cao hơn.",
-            "Là sự phát triển cao hơn, có hình thức đa dạng, phong phú theo đường thẳng, đường xoáy ốc hay đường sin.",
-            "Là vừa phủ định và phủ nhận mang nhiều hình thức phong phú, nhiều vẻ như đường tròn, đường xoáy ốc hoặc đường thẳng theo xu hướng tiến lên đến vô cùng.",
-            "Là sự khẳng định có tính kế thừa làm cho hình thức phủ định qua nhiều giai đoạn phong phú và được lặp lại theo đường tròn khép kín, đường dích dắc, đường xoáy ốc."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 122
-    {
-        id: 122,
-        question: "Tìm câu trả lời đúng nhất theo quan điểm Mác-xít về những nguyên tắc cơ bản của Lý luận nhận thức trong các câu dưới đây:",
-        options: [
-            "Là sự thừa nhận thế giới khách quan tồn tại độc lập với ý thức, thừa nhận ý thức có khả năng phản ánh đúng thế giới khách quan, nhận thức là một quá trình biện chứng, cơ sở chủ yếu, trực tiếp nhất của nhận thức là thực tiễn.",
-            "Là sự thừa nhận thế giới khách quan tồn tại độc lập với ý thức, thừa nhận khả năng nhận thức của con người, thừa nhận con người có nhiều điều không thể biết.",
-            "Sự thừa nhận nhận thức là một quá trình biện chứng, thừa nhận đối tượng nhận thức là khách quan; khả năng nhận thức của con người là có hạn.",
-            "Là sự thừa nhận đối tượng nhận thức tồn tại khách quan; chủ thể nhận thức là con người, có thể nhận thức đúng, quá trình nhận thức diễn ra trực tiếp một lần là hoàn thiện."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 123
-    {
-        id: 123,
-        question: "Tìm câu trả lời đúng nhất về khả năng nhận thức thế giới hiện thực khách quan của con người trong các câu dưới đây:",
-        options: [
-            "Con người có khả năng nhận thức thế giới hiện thực khách quan, đối với con người không có điều gì là không thể biết, mà chỉ có cái chưa biết. Sự hiểu biết là một quá trình tuân theo các quy luật biện chứng như quy luật mâu thuẫn, quy luật lượng chất, quy luật phủ định của phủ định và những quy luật khác của tư duy.",
-            "Con người có khả năng nhận thức thế giới hiện thực khách quan, đối với con người không phải là cái gì cũng biết mà có những cái không thể biết. Sự hiểu biết của con người là quá trình cộng dần những hiểu biết có hạn lại thành cái vô hạn.",
-            "Con người có khả năng nhận thức thế giới hiện thực khách quan, đối với con người không có gì là không thể biết chỉ có những cái chưa biết. Sự hiểu biết đó diễn ra bằng con đường tích luỹ dần của từng người cộng lại nhiều lần tạo thành.",
-            "Con người không có khả năng nhận thức thế giới hiện thực khách quan, đối với con người có phần nhận thức đúng, có phần không thể hiểu biết đúng được thế giới. Vì thế giới là mênh mông vô hạn. Còn mỗi con người chỉ là có hạn mà thôi."
-        ],
-        correctAnswer: 0,
-      
-    },
-    // Câu 124
-    {
-        id: 124,
-        question: "Tìm đáp án đúng nhất về những tính chất của Chân lý trong những đáp án dưới đây:",
-        options: [
-            "Chân lý có tính cụ thể, có nội dung khách quan, vừa có tính tuyệt đối, vừa có tính tương đối.",
-            "Không có chân lý trừu tượng, chân lý có hình thức chủ quan, nội dung khách quan, không có tính tương đối vì chân lý luôn luôn đúng trong mọi hoàn cảnh.",
-            "Chân lý có nội dung khách quan, hình thức chủ quan, chân lý có tính trừu tượng cao siêu, chân lý còn có tính tuyệt đối và tính tương đối.",
-            "Chân lý có hình thức chủ quan và nội dung khách quan, chân lý bao giờ cũng cụ thể, chỉ có chân lý tương đối, không có chân lý tuyệt đối vì thực tiễn luôn luôn biến đổi và nhận thức của con người là có hạn."
-        ],
-        correctAnswer: 0,
-       
-    },
-    // Câu 125
-    {
-        id: 125,
-        question: "Tìm câu trả lời đúng nhất về ý nghĩa phương pháp luận của quy luật Phủ định của phủ định trong các câu dưới đây:",
-        options: [
-            "Phủ định của phủ định là quá trình cái cũ mất đi, cái mới hợp quy luật ra đời. Cần có thái độ tích cực ủng hộ, giúp đỡ, bảo vệ cái mới và kiên quyết từ bỏ cái cũ lỗi thời. Cái mới ra đời thường gặp nhiều khó khăn, trở ngại.",
-            "Phủ định của phủ định là quá trình cái mới ra đời. Cần có thái độ giúp đỡ, ủng hộ, bảo vệ cái mới. Vì khi nó ra đời thường gặp nhiều khó khăn.",
-            "Phủ định của phủ định là làm cho cái cũ mất đi, cái mới ra đời phù hợp quy luật. Cần phải xây dựng thái độ ủng hộ, giúp đỡ, phê phán cái mới.",
-            "Phủ định của phủ định là quá trình cái cũ mất đi, cái mới ra đời hợp quy luật. Cần có nhận thức đúng về vai trò tích cực, tiến bộ của cái mới."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 126
-    {
-        id: 126,
-        question: "Tìm câu trả lời đúng nhất về quan hệ biện chứng giữa Lượng và Chất trong các câu dưới đây:",
-        options: [
-            "Lượng- chất có quan hệ biện chứng. Phải kiên trì tích luỹ về lượng mới có sự thay đổi về chất, tạo ra bước ngoặt. Không được nóng vội, chủ quan, duy ý chí, đốt cháy giai đoạn. Ngược lại, chỉ có thay đổi căn bản về chất mới chuyển được cái cũ sang cái mới.",
-            "Lượng- chất có quan hệ biện chứng. Không được nóng vội, chủ quan, duy ý chí khi chưa tích luỹ được lượng cần thiết. Nhưng đôi khi chưa tích luỹ đủ lượng cũng phải thay đổi về chất.",
-            "Lượng- chất có quan hệ biện chứng. Không được nóng vội, chủ quan, duy ý chí khi lượng đã được tích luỹ đầy đủ.",
-            "Phải kiên quyết, không chần chừ, do dự, thay đổi về chất khi lượng đã được tích luỹ đủ."
-        ],
-        correctAnswer: 0,
-
-    },
-    // Câu 127
-    {
-        id: 127,
-        question: "Xác định quan niệm siêu hình về Chân lý trong các quan niệm dưới đây:",
-        options: [
-            "Nội dung chân lý có tính khách quan, còn hình thức biểu hiện chân lý thì mang tính chủ quan.",
-            "Chân lý bao giờ cũng cụ thể, không có chân lý trừu tượng.",
-            "Chân lý không bao giờ chuyển hoá thành sai lầm.",
-            "Chân lý là kiến thức đúng đắn được thực tiễn kiểm nghiệm."
-        ],
-        correctAnswer: 2,
-        
-    },
-    // Câu 128
-    {
-        id: 128,
-        question: "Hãy xác định nhận định về chủ trương có tính Duy tâm chủ quan trong các nhận định dưới đây:",
-        options: [
-            "Đại hội VIII năm 1996 nhận định: Nhiệm vụ chuẩn bị các tiền đề cho công nghiệp hoá đã cơ bản hoàn thành, cho phép chuyển sang thời kì mới đẩy mạnh công nghiệp hoá, hiện đại hoá đất nước.",
-            "Đại hội IX năm 2001 chủ trương: trước hết phải phát triển mạnh lực lượng sản xuất, rồi tuỳ theo trình độ phát triển của lực lượng sản xuất mà quan hệ sản xuất từng bước được cải tiến theo cho phù hợp.",
-            "Trong điều kiện lực lượng sản xuất phát triển không đồng đều như ở nước ta hiện nay, chúng ta chủ trương thực hiện nhiều loại hình sở hữu, do đó tồn tại nhiều thành phần kinh tế.",
-            "Trong 5 năm (1976- 1980) khi bố trí cơ cấu kinh tế, các nhà lãnh đạo nước ta thường xuất phát từ lòng mong muốn đi nhanh, không tính tới điều kiện và khả năng thực tế của đất nước."
-        ],
-        correctAnswer: 3,
-       
-    },
-    // Câu 129
-    {
-        id: 129,
-        question: "Hãy xác định đáp án đúng về cấu trúc của cơ sở hạ tầng trong các đáp án dưới đây:",
-        options: [
-            "Bao gồm quan hệ sản xuất thống trị, quan hệ sản xuất tàn dư, quan hệ sản xuất mầm mống. Trong đó quan hệ sản xuất thống trị là đặc trưng cho cơ sở hạ tầng của xã hội đó.",
-            "Bao gồm quan hệ sản xuất thống trị, quan hệ sản xuất tàn dư, quan hệ sản xuất mầm mống. Trong đó quan hệ sản xuất mầm mống đặc trưng cho cơ sở hạ tầng của xã hội đó.",
-            "Bao gồm lực lượng sản xuất, quan hệ sản xuất và hoàn cảnh địa lý tự nhiên",
-            "Bao gồm hệ thống điện, đường, trường, trạm"
-        ],
-        correctAnswer: 0,
-       
-    },
-    // Câu 130
-    {
-        id: 130,
-        question: 'Luận điểm: "Cơ sở kinh tế thay đổi thì toàn bộ cái kiến trúc thượng tầng đồ sộ cũng bị đảo lộn ít nhiều nhanh chóng" thuộc lập trường triết học nào dưới đây:',
-        options: [
-            "Chủ nghĩa duy vật lịch sử",
-            "Chủ nghĩa duy tâm lịch sử",
-            "Chủ nghĩa duy vật tầm thường",
-            "Chủ nghĩa duy tâm chủ quan"
-        ],
-        correctAnswer: 0,
-       
-    },
-    // Câu 131
-    {
-        id: 131,
-        question: "Xác định lập trường duy vật lịch sử về mối quan hệ giữa cơ sở hạ tầng và kiến trúc thượng tầng trong các đáp án dưới đây:",
-        options: [
-            "Quy luật về mối quan hệ biện chứng giữa cơ sở hạ tầng và kiến trúc thượng tầng là cơ sở khoa học cho việc nhận thức một cách đúng đắn mối quan hệ giữa văn hóa và xã hội",
-            "Quy luật về mối quan hệ biện chứng giữa cơ sở hạ tầng và kiến trúc thượng tầng là cơ sở khoa học cho việc nhận thức một cách đúng đắn mối quan hệ giữa kinh tế và chính trị.",
-            "Quy luật về mối quan hệ biện chứng giữa cơ sở hạ tầng và kiến trúc thượng tầng là cơ sở khoa học cho việc nhận thức một cách đúng đắn mối quan hệ giữa tôn giáo và nghệ thuật.",
-            "Quy luật về mối quan hệ biện chứng giữa cơ sở hạ tầng và kiến trúc thượng tầng là cơ sở khoa học cho việc nhận thức một cách đúng đắn mối quan hệ giữa đạo đức và pháp quyền."
-        ],
-        correctAnswer: 1,
-
-    },
-    // Câu 132
-    {
-        id: 132,
-        question: "Tìm luận điểm viết sai về đặc trưng cơ bản của giai cấp trong các luận điểm dưới đây:",
-        options: [
-            "Giai cấp là những tập đoàn người có địa vị kinh tế - xã hội khác nhau trong một hệ thống sản xuất xã hội nhất định trong lịch sử.",
-            "Dấu hiệu chủ yếu quy đinh địa vị kinh tế - xã hội của các giai cấp là các mối quan hệ kinh tế - vật chất giữa các tập đoàn người trong phương thức sản xuất.",
-            "Thực chất của quan hệ giai cấp là quan hệ giữa bóc lột và bị bóc lột, là tập đoàn người này chiếm đoạt lao động của tập đoàn người khác do đối lập về địa vị trong một chế độ kinh tế - xã hội nhất định.",
-            "Giai cấp là những tập đoàn người có địa vị văn hóa - xã hội khác nhau trong một hệ thống sản xuất xã hội nhất định trong lịch sử."
-        ],
-        correctAnswer: 3,
-
-    },
-    // Câu 133
-    {
-        id: 133,
-        question: "Tìm đáp án thiếu chính xác về đặc trưng của dân tộc trong các đáp án dưới đây:",
-        options: [
-            "Dân tộc là một cộng đồng người ổn định trên một lãnh thổ thống nhất.",
-             "Dân tộc là một cộng đồng thống nhất về ngôn ngữ.",
-            "Dân tộc là một cộng đồng thống nhất về kinh tế.",
-            "Dân tộc là một cộng đồng bền vững về tình cảm, lối sống"
-        ],
-        correctAnswer: 3,
-        
-    },
-    // Câu 134
-    {
-        id: 134,
-        question: 'Luận điểm: "Sự phát triển của chính trị, pháp luật, triết học, tôn giáo, văn học, nghệ thuật, v.v. đều dựa trên cơ sở phát triển kinh tế. Nhưng tất cả chúng cũng có ảnh hưởng lẫn nhau và ảnh hưởng đến cơ sở kinh tế" thuộc lập trường triết học nào dưới đây:',
-        options: [
-            "Chủ nghĩa duy vật lịch sử",
-            "Chủ nghĩa duy tâm lịch sử",
-            "Chủ nghĩa duy tâm chủ quan",
-            "Chủ nghĩa duy kinh tế"
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 135
-    {
-        id: 135,
-        question: "Phát hiện đáp án sai về con người theo quan điểm của chủ nghĩa Mác Lênin trong các đáp án dưới đây:",
-        options: [
-            "Con người là thực thể sinh học - xã hội",
-            "Con người là sản phẩm của lịch sử và của chính bản thân con người",
-            "Con người vừa là chủ thể của lịch sử, vừa là sản phẩm của lịch sử",
-            "Con người là sản phẩm của thượng đế"
-        ],
-        correctAnswer: 3,
-       
-    },
-    // Câu 136
-    {
-        id: 136,
-        question: "Phát hiện đáp án sai về Sự phát triển trong các đáp án dưới đây:",
-        options: [
-            "Phát triển là quá trình vận động từ thấp đến cao, từ kém hoàn thiện đến hoàn thiện hơn, từ chất cũ đến chất mới ở trình độ cao hơn.",
-            "Phát triển là sự tăng lên hoặc giảm đi về mặt lượng, chỉ là sự tuần hoàn, lặp đi, lặp lại mà không có sự thay đổi về chất.",
-            "Phát triển là vận động nhưng không phải mọi vận động đều là phát triển.",
-            "Đặc điểm chung của sự phát triển là tính tiến lên theo đường xoáy ốc, có kế thừa, có sự dường như lặp lại sự vật, hiện tượng cũ nhưng trên cơ sở cao hơn."
-        ],
-        correctAnswer: 1,
-    },
-    // Câu 137
-    {
-        id: 137,
-        question: "Phát hiện đáp án sai về Nhận thức trong các đáp án dưới đây:",
-        options: [
-            "Nhận thức là quá trình phản ánh hiện thực khách quan, là quá trình tạo thành tri thức về thế giới khách quan trong bộ óc con người",
-            "Nhận thức là quá trình tác động biện chứng giữa chủ thể nhận thức và khách thể nhận thức trên cơ sở hoạt động thực tiễn của con người.",
-            "Nhận thức là quá trình phản ánh hiện thực khách quan một cách tích cực, chủ động, sáng tạo bởi con người trên cơ sở thực tiễn mang tính lịch sử cụ thể.",
-            "Nhận thức là quá trình phản ánh hiện thực khách quan một cách thụ động của con người trên cơ sở thực tiễn mang tính lịch sử cụ thể."
-        ],
-        correctAnswer: 3,
-        
-    },
-    // Câu 138
-    {
-        id: 138,
-        question: "Tìm đáp án thể hiện quan điểm Duy tâm về vai trò của Ý thức trong các đáp án dưới đây:",
-        options: [
-            "Ý thức tự nó chỉ làm thay đổi tư tưởng. Như vậy ý thức hoàn toàn không có tác dụng gì đối với thực tiễn.",
-            "Ý thức là phản ánh sáng tạo thực tại khách quan và đồng thời có tác động trở lại mạnh mẽ thực tại đó thông qua hoạt động thực tiễn của con người.",
-            "Ý thức là cái phụ thuộc vào nguồn gốc sinh ra nó. Vì thế chỉ có vật chất mới là cái năng động, tích cực",
-            "Ý thức là cái quyết định vật chất. Vật chất chỉ là cái thụ động, phụ thuộc vào ý thức."
-        ],
-        correctAnswer: 3,
-       
-    },
-    // Câu 139
-    {
-        id: 139,
-        question: "Tìm đáp án thể hiện đúng nhất quan điểm Duy vật biện chứng về mối liên hệ của các sự vật, hiện tượng trong các đáp án dưới đây:",
-        options: [
-            "Là sự tác động lẫn nhau, chi phối chuyển hoá lẫn nhau một cách khách quan, phổ biến, nhiều vẻ giữa các mặt, quá trình của sự vật, hiện tượng, hoặc giữa các sự vật, hiện tượng.",
-            "Là sự thừa nhận rằng giữa các mặt, các yêu tố cấu thành sự vật, hiện tượng và giữa các sự vật với nhau trong thực tế khách quan không có mối liên hệ nào cả.",
-            "Sai lầm của phép siêu hình là ở chỗ ngoài tính khách quan, tính phổ biến của mối liên hệ còn đưa ra quan điểm về tính phong phú của mối liên hệ.",
-            "Là sự tác động lẫn nhau, có tính khách quan, phổ biến, nhiều vẻ, có thể chuyển hoá cho nhau."
-        ],
-        correctAnswer: 0,
-
-    },
-    // Câu 140
-    {
-        id: 140,
-        question: "Tìm đáp án đúng nhất về tính chất của sự Phát triển theo Phép biện chứng duy vật trong các đáp án dưới đây:",
-        options: [
-            "Tính khách quan, tính phổ biến, tính kế thừa và tính đa dạng phong phú",
-            "Tính sáng tạo, tính phổ biến, tính kế thừa và tính đa dạng phong phú",
-            "Tính chủ quan, tính phổ biến, tính kế thừa và tính đa dạng phong phú",
-            "Tính chọn lọc, tính phổ biến, tính kế thừa và tính đa dạng phong phú"
-        ],
-        correctAnswer: 0,
-
-    },
-    // Câu 141
-    {
-        id: 141,
-        question: "Xác định đáp án đúng và đầy đủ nhất về Thực tiễn trong những đáp án dưới đây:",
-        options: [
-            "Là toàn bộ những hoạt động của con người có tính vật chất, tính mục đích, tính xã hội - lịch sử làm biến đổi tự nhiên, xã hội theo hướng tích cực, tiến bộ, phục vụ cho lợi ích con người, trong đó sản xuất vật chất là thực tiễn cơ bản nhất.",
-            "Là toàn bộ những hoạt động của con người có tính mục đích, tính xã hội - lịch sử làm biến đổi tự nhiên, xã hội theo hướng tích cực, tiến bộ, trong đó sản xuất vật chất là thực tiễn cơ bản nhất.",
-            "Là toàn bộ những hoạt động của con người có tính mục đích, tính vật chất, làm biến đổi tự nhiên - xã hội theo hướng tích cực, trong đó sản xuất vật chất là thực tiễn cơ bản nhất.",
-            "Là toàn bộ những hoạt động của con người có tính mục đích, tính vật chất, tính lịch sử - xã hội, trong đó sản xuất tinh thần là thực tiễn cơ bản nhất."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 142
-    {
-        id: 142,
-        question: "Xác định quan niệm sai về Chân lý trong các quan niệm dưới đây:",
-        options: [
-            "Nội dung chân lý là chủ quan vì nó do đầu óc con người tạo ra.",
-            "Chân lý bao giờ cũng cụ thể, không có chân lý trừu tượng.",
-            "Có thể hiểu chân lý cũng là sự phù hợp giữa chủ quan với khách quan.",
-            "Chân lý là kiến thức đúng đắn được thực tiễn kiểm nghiệm."
-        ],
-        correctAnswer: 0,
-        
-    },
-    // Câu 143
-    {
-        id: 143,
-        question: "Xác định quan niệm sai về Chân lý trong các quan niệm dưới đây:",
-        options: [
-            "Nội dung chân lý có tính khách quan, còn hình thức biểu hiện chân lý thì mang tính chủ quan.",
-            "Chân lý bao giờ cũng là chân lý trừu tượng.",
-            "Có thể hiểu chân lý cũng là sự phù hợp giữa chủ quan với khách quan.",
-            "Chân lý là kiến thức đúng đắn được thực tiễn kiểm nghiệm."
-        ],
-        correctAnswer: 1,
-     
-    },
-    // Câu 144
-    {
-        id: 144,
-        question: "Xác định quan niệm sai về Chân lý trong các quan niệm dưới đây:",
-        options: [
-            "Nội dung chân lý có tính khách quan, còn hình thức biểu hiện chân lý thì mang tính chủ quan.",
-            "Chân lý bao giờ cũng cụ thể, không có chân lý trừu tượng.",
-            "Có thể hiểu chân lý là sự phù hợp giữa nhận thức với các nguyên lý trong sách vở.",
-            "Chân lý là kiến thức đúng đắn được thực tiễn kiểm nghiệm."
-        ],
-        correctAnswer: 2,
-        
+        "correctAnswer": 1
     },
     {
-        id: 145,
-        question: "Xác định quan niệm sai về Chân lý trong các quan niệm dưới đây:",
-        options: [
-            "Nội dung chân lý có tính khách quan, còn hình thức biểu hiện chân lý thì mang tính chủ quan.",
-            "Chân lý bao giờ cũng cụ thể, không có chân lý trừu tượng.",
-            "Có thể hiểu chân lý là sự phù hợp giữa nhận thức với các nguyên lý trong sách vở.",
-            "Chân lý là kiến thức được số đông chấp nhận."
+        "id": 64,
+        "question": "Tìm tất cả các khách hàng chuyển tiền đi có số tiền nhỏ hơn 500.000.",
+        "options": [
+            "select kh_chuyen from chuyentiendi where sotien >= 500000;",
+            "select kh_chuyen from chuyentiendi where sotien > 500000;",
+            "select kh_chuyen from chuyentiendi where sotien <= 500000;",
+            "select kh_chuyen from chuyentiendi where sotien < 500000;"
         ],
-        correctAnswer: 3,
-        
+        "correctAnswer": 3
     },
-    // Câu 146
     {
-        id: 146,
-        question: "Tìm luận điểm đúng nhất về mối quan hệ biện chứng giữa Bản chất và Hiện tượng trong các luận điểm dưới đây:",
-        options: [
-            "Hiện tượng biểu hiện ra bên ngoài của bản chất, thường làm sai lệch bản chất nên tốt nhất là nhận thức, hành động đi thẳng vào bản chất sẽ tránh được sai lầm.",
-            "Phương pháp nhận thức đúng là đi từ hiện tượng đến bản chất, đi từ bản chất ít sâu sắc đến bản chất sâu sắc hơn, không nhầm lẫn hiện tượng với bản chất.",
-            "Nhận thức và hành động của con người không thể đạt tới bản chất của sự vật vì nó bị vô số hiện tượng bao bọc bên ngoài, trong đó lại có những hiện tượng làm sai lạc, xuyên tạc bản chất.",
-            "Chỉ có bản chất mới là mối quan hệ khách quan, còn hiện tượng là mối quan hệ chủ quan do tác động tiêu cực của con người tạo ra làm sai lạc bản chất. Nên muốn nhận thức đúng bản chất, con người đi thẳng vào tìm hiểu và nắm lấy bản chất sẽ tránh được sai lầm."
+        "id": 65,
+        "question": "Tìm tất cả các khách hàng chuyển tiền đi có tên NGUYEN VAN A của chi nhánh Hà Nội có MACHINHANH là 1500:",
+        "options": [
+            "select kh_chuyen from chuyentiendi where machinhanh = 1500 and kh_chuyen = 'nguyen van a';",
+            "select kh_nhan from chuyentiendi where machinhanh = 1500 and kh_chuyen = 'nguyen van a';",
+            "select kh_nhan from chuyentiendi where machinhanh = 1500 and kh_chuyen = 'nguyen van a';",
+            "select kh_chuyen from chuyentiendi where machinhanh = 1500 or kh_chuyen = 'nguyen van a';"
         ],
-        correctAnswer: 1,
-       
+        "correctAnswer": 0
     },
-    // Câu 147
     {
-        id: 147,
-        question: "Tìm câu thể hiện đúng nhất về ý nghĩa phương pháp luận của mối quan hệ biện chứng giữa Nội dung và Hình thức trong các câu dưới đây:",
-        options: [
-            "Trong nhận thức và hành động không được tách rời hoặc tuyệt đối hoá một mặt nội dung hay hình thức. Phải coi trọng nội dung đồng thời phải chú trọng thích đáng tới hình thức, bảo đảm cho nội dung có một hình thức phù hợp nhất. Khi một trong chúng đã tỏ ra lỗi thời thì phải thay đổi cho phù hợp.",
-            "Trong nhận thức và hành động không được tách rời, tuyệt đối hoá một mặt nội dung hay hình thức. Trước hết phải chú trọng vai trò quyết định của hình thức đồng thời coi trọng nội dung. Khi một trong chúng đã lỗi thời thì phải thay đổi cho phù hợp, chống chủ nghĩa hình thức.",
-            "Trong nhận thức và hành động không được tách rời, tuyệt đối hoá một mặt nội dung hay hình thức. Trước hết phải chú trọng vai trò quyết định của nội dung.",
-            "Trong nhận thức và hành động không được tuyệt đối hoá một mặt nội dung hay hình thức."
+        "id": 66,
+        "question": "Khách hàng muốn thay đổi thông tin người hưởng từ Nguyen Thi B sang Nguyen Thi C của giao dịch chuyển tiền tại chi nhánh Hà nội có MACHINHANH là 1500 có MAGIAODICHDI là XYZ",
+        "options": [
+            "UPDATE CHUYENTIENDI SET KH_NHAN = 'NGUYEN THI C' WHERE MACHINHANH = 1500 AND MAGIAODICHDI = XYZ AND KH_NHAN = 'NGUYEN THI B'.",
+            "UPDATE CHUYENTIENDI SET KH_CHUYEN = 'NGUYEN THI C' WHERE MACHINHANH = 1500 AND MAGIAODICHDI = XYZ AND KH_NHAN = 'NGUYEN THI B' AND TRANGTHAI = 'CREATE'.",
+            "UPDATE CHUYENTIENDI SET KH_NHAN = 'NGUYEN THI C' WHERE MAGIAODICHDI = XYZ AND KH_NHAN = 'NGUYEN THI B'.",
+            "UPDATE CHUYENTIENDEN SET KH_NHAN = 'NGUYEN THI C' WHERE MAGIAODICHDI = XYZ AND KH_NHAN = 'NGUYEN THI B'."
         ],
-        correctAnswer: 0,
-        
+        "correctAnswer": 0
     },
-    // Câu 148
     {
-        id: 148,
-        question: "Tìm luận điểm thể hiện quan điểm Siêu hình về mối quan hệ giữa Nguyên nhân - Kết quả trong các luận điểm dưới đây:",
-        options: [
-            "Trong những điều kiện xác định, nguyên nhân có trước kết quả, một nguyên nhân sinh ra nhiều kết quả và ngược lại, nguyên nhân và kết quả có thể chuyển hoá cho nhau.",
-            "Trong điều kiện xác định, nguyên nhân có trước kết quả, một nguyên nhân chỉ sinh ra một kết quả và ngược lại, nguyên nhân và kết quả không thể chuyển hoá cho nhau.",
-            "Trong điều kiện xác định, nguyên nhân có sau kết quả. Một nguyên nhân có thể sinh ra nhiều kết quả và ngược lại. Nguyên nhân và kết quả có thể chuyển hoá cho nhau.",
-            "Trong điều kiện xác định, nguyên nhân có trước kết quả, một nguyên nhân sinh ra nhiều kết quả và ngược lại. Nguyên nhân và kết quả có thể chuyển hoá cho nhau trong quá trình vận động."
+        "id": 67,
+        "question": "Liệt kê danh sách các lệnh chuyển tiền của chi nhánh có MACHINHANH là 1500 mà lệnh đi thành công, kết quả được sắp xếp theo chiều tăng dần theo ngày và số tiền giao dịch. Yêu cầu thông tin: MAGIAODICHDI, NGAYGIAODICH, SOTIEN",
+        "options": [
+            "SELECT MAGIAODICHDI, NGAYGIAODICH, SOTIEN FROM CHUYENTIENDI WHERE MACHINHANH = 1500 ORDER BY NGAYGIAODICH, SOTIEN.",
+            "SELECT MAGIAODICHDI, NGAYGIAODICH, SOTIEN FROM CHUYENTIENDI WHERE MACHINHANH = 1500 AND TRANGTHAI = 'SUCCESS' ORDER BY NGAYGIAODICH, SOTIEN.",
+            "SELECT MAGIAODICHDI, NGAYGIAODICH, SOTIEN FROM CHUYENTIENDI WHERE MACHINHANH = 1500 TRANGTHAI <> 'SUCCESS' ORDER BY NGAYGIAODICH, SOTIEN.",
+            "SELECT MAGIAODICHDI, NGAYGIAODICH, SOTIEN FROM CHUYENTIENDEN WHERE MACHINHANH = 1500 TRANGTHAI <> 'SUCCESS' ORDER BY NGAYGIAODICH, SOTIEN."
         ],
-        correctAnswer: 1,
-        
+        "correctAnswer": 1
     },
-    // Câu 149
     {
-        id: 149,
-        question: "Tìm luận điểm thể hiện quan điểm Duy tâm về ý nghĩa phương pháp luận rút ra từ quan hệ Nguyên nhân -- Kết quả trong các luận điểm dưới đây:",
-        options: [
-            "Để có kết quả theo mong muốn phải biết phát hiện và điều khiển các nguyên nhân, khắc phục những nguyên nhân ngược chiều, tạo điều kiện cho nguyên nhân cùng chiều hướng tới kết quả.",
-            "Vì nguyên nhân có trước kết quả nên muốn có kết quả theo mong muốn thì chờ đợi ở nguyên nhân sẽ xảy ra. Sau đó lại sử dụng kết quả đó tạo ra nguyên nhân tiếp sau để được hưởng kết quả cao hơn.",
-            "Quan hệ nhân quả là quan hệ do chủ quan của con người tạo ra cho nên trong nhận thức và hành động con người chắc chắn nhận được kết quả do mình tạo ra.",
-            "Nguyên nhân có trước kết quả vì thế cứ chờ đợi thì sớm hay muộn kết quả sẽ tới."
+        "id": 68,
+        "question": "Hãy cho biết tổng số lệnh đi thành công của mỗi chi nhánh, thông tin được sắp theo chiều tăng dần chi nhánh.",
+        "options": [
+            "SELECT MACHINHANH, COUNT(*) FROM CHUYENTIENDI GROUP BY MACHINHANH ORDER BY MACHINHANH.",
+            "SELECT MACHINHANH, COUNT(*) FROM CHUYENTIENDI WHERE TRANGTHAI <> 'SUCCESS' GROUP BY MACHINHANH ORDER BY MACHINHANH.",
+            "SELECT MACHINHANH, COUNT(*) FROM CHUYENTIENDI WHERE TRANGTHAI = 'SUCCESS' GROUP BY MACHINHANH ORDER BY MACHINHANH.",
+            "SELECT MACHINHANH, COUNT(*) FROM CHUYENTIENDEN WHERE TRANGTHAI <> 'SUCCESS' GROUP BY MACHINHANH ORDER BY MACHINHANH"
         ],
-        correctAnswer: 2,
-       
+        "correctAnswer": 2
     },
-    // Câu 150
     {
-        id:150,
-        question: "Tìm luận điểm thể hiện đúng nhất về giá trị phương pháp luận của mối quan hệ giữa cái Tất nhiên và Ngẫu nhiên trong các luận điểm dưới đây:",
-        options: [
-            " Thông qua nghiên cứu nhiều cái ngẫu nhiên để phát hiện cái tất nhiên. Dựa vào cái tất nhiên để hành động đồng thời dự phòng xử lý kịp thời với cái ngẫu nhiên.",
-            "Mục đích của nhận thức và hành động là đạt tới cái tất nhiên để có tự do. Nhưng cái tất nhiên tồn tại như vật tự nó nên con người chỉ có thể nắm được cái ngẫu nhiên.",
-            "Nắm lấy cái tất nhiên, chi phối, điều khiển, phòng ngừa cái ngẫu nhiên. Đó là mục đích của nhận thức và hành động của con người trong khi giải quyết mối quan hệ giữa tất nhiên và ngẫu nhiên.",
-            "Nắm lấy cái tất nhiên để chi phối, điều khiển, phòng ngừa mặt tác hại của ngẫu nhiên. Nhận thức không phải bằng cách đi từ phân tích ngẫu nhiên mà đi thẳng vào cái tất nhiên."
+        "id": 69,
+        "question": "Khách hàng Nguyen Van A đến ngân hàng có MACHINHANH là 1500 muốn nhận số tiền 500000 với số Chứng minh thư: 123456789. Hãy truy vấn thông tin để chi tiền cho khách hàng",
+        "options": [
+            "SELECT MAGIAODICHDEN ,NGAYGIAODICH, LOAITIEN, SOTIEN, KH_CHUYEN, KH_NHAN FROM CHUYENTIENDEN WHERE MACHINHANH=1500 AND KH_NHAN = 'Nguyen Van A' AND CMT = 123456789.",
+            "SELECT MAGIAODICHDEN ,NGAYGIAODICH, LOAITIEN, SOTIEN, KH_CHUYEN, KH_NHAN FROM CHUYENTIENDEN WHERE MACHINHANH=1500 AND KH_NHAN = 'Nguyen Van A' AND CMT = 123456789 AND SOTIEN = 500000.",
+            "SELECT MAGIAODICHDEN ,NGAYGIAODICH, LOAITIEN, SOTIEN, KH_CHUYEN, KH_NHAN FROM CHUYENTIENDEN WHERE MACHINHANH=1500 AND KH_NHAN = 'Nguyen Van A' AND CMT = 123456789 AND SOTIEN = 500000 AND TRANGTHAI = UNPAID.",
+            "SELECT MAGIAODICHDEN ,NGAYGIAODICH, LOAITIEN, SOTIEN, KH_CHUYEN, KH_NHAN FROM CHUYENTIENDI WHERE MACHINHANH=1500 AND KH_NHAN = 'Nguyen Van A' AND CMT = 123456789 AND SOTIEN = 500000."
         ],
-        correctAnswer: 0,
-        explanation: "Đáp án  đúng vì thể hiện phương pháp luận đúng: thông qua ngẫu nhiên để phát hiện tất nhiên, dựa vào tất nhiên để hành động, dự phòng ngẫu nhiên."
+        "correctAnswer": 2
     }
-];
+]
 
      // ========== BIẾN TOÀN CỤC ==========
         let questions = [...allQuestions];
